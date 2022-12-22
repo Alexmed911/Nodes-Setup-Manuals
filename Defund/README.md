@@ -65,7 +65,7 @@ sed -i -e 's|^seeds *=.*|seeds = "'$seeds'"|; s|^persistent_peers *=.*|persisten
 ```
 ## Download Addrbook
 ```
-wget -O $HOME/.defund/config/addrbook.json "https://raw.githubusercontent.com/Alexmed911/Nodes-Setup-Manuals/main/Defund/addrbook.json)"
+wget -O $HOME/.defund/config/addrbook.json "https://github.com/Alexmed911/Nodes-Setup-Manuals/blob/main/Defund/addrbook.json"
 ```
 ## Pruning
 ```
