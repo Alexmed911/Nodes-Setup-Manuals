@@ -22,7 +22,7 @@ sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
 rm "go$ver.linux-amd64.tar.gz" && \
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
 source $HOME/.bash_profile && \
-go version
+go version    
 #1.19.3
 ```
 ## Install Node
@@ -33,11 +33,17 @@ git clone https://github.com/defund-labs/defund.git
 cd defund
 git checkout v0.2.1
 make install
-defundd version   
-#v0.2.1
+defundd version         #v0.2.1
 ```
 ```
 defundd config keyring-backend test
 defundd config chain-id defund-private-3
-defundd init $MONIKER-YourName --chain-id defund-private-3
+defundd init $Moniker-name --chain-id defund-private-3
+```
+```
+#Download Genesis
+wget -O defund-private-3-gensis.tar.gz https://github.com/defund-labs/testnet/raw/main/defund-private-3/defund-private-3-gensis.tar.gz
+sudo tar -xvzf defund-private-3-gensis.tar.gz -C $HOME/.defund/config
+rm defund-private-3-gensis.tar.gz
+sha256sum $HOME/.defund/config/genesis.json          # 1a10121467576ab6f633a14f82d98f0c39ab7949102a77ab6478b2b2110109e3
 ```
