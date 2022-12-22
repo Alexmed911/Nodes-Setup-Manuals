@@ -100,3 +100,25 @@ sudo systemctl daemon-reload
 sudo systemctl enable defundd
 sudo systemctl restart defundd && sudo journalctl -u defundd -f -o cat
 ```
+## Sync
+```
+defundd status 2>&1 | jq .SyncInfo
+defundd status 2>&1 | jq .NodeInfo
+```
+## Create validator
+```
+defundd tx staking create-validator  \       # --node "tcp://127.0.0.1:$$657"
+  --amount 1000000ufetf \
+  --from wallet \
+  --commission-max-change-rate "0.1" \
+  --commission-max-rate "0.2" \
+  --commission-rate "0.05" \
+  --min-self-delegation "1" \
+  --pubkey  $(defundd tendermint show-validator) \
+  --moniker=Moniker \
+  --chain-id defund-private-3 \
+  --website="" \
+  --identity="" \
+  --details="" \
+  -y
+```
