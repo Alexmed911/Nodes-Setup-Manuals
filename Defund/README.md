@@ -26,6 +26,7 @@ go version
 #1.19.3
 ```
 ## Install Node
+
 ```
 cd $HOME
 rm -rf defund
@@ -36,6 +37,7 @@ make install
 defundd version         #v0.2.1
 ```
 ```
+#Initialize the node
 defundd config keyring-backend test
 defundd config chain-id defund-private-3
 defundd init $Moniker-name --chain-id defund-private-3
@@ -46,4 +48,5 @@ wget -O defund-private-3-gensis.tar.gz https://github.com/defund-labs/testnet/ra
 sudo tar -xvzf defund-private-3-gensis.tar.gz -C $HOME/.defund/config
 rm defund-private-3-gensis.tar.gz
 sha256sum $HOME/.defund/config/genesis.json          # 1a10121467576ab6f633a14f82d98f0c39ab7949102a77ab6478b2b2110109e3
+```
 ```
