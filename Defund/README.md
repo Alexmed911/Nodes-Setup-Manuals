@@ -30,7 +30,8 @@ git clone https://github.com/defund-labs/defund.git
 cd defund
 git checkout v0.2.1
 make install
-defundd version          //v0.2.1
+defundd version          
+```
 ```
 defundd config keyring-backend test
 defundd config chain-id defund-private-3
