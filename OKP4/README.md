@@ -29,25 +29,18 @@ go version
 
 ```
 cd $HOME
-git clone https://github.com/persistenceOne/persistenceCore.git
-cd persistenceCore
-git checkout v5.0.0
+git clone https://github.com/okp4/okp4d.git
+cd okp4d
+git checkout v3.0.0
 make install
-persistenceCore version         
-#v5.0.0
-```
-## Update v5
-```
-cd $HOME/persistenceCore
-git pull
-git checkout v5.0.0
-make build
-cp build/persistenceCore /root/go/bin
+okp4d version         
+#v3.0.0
 ```
 ## Initialize the node
 ```
-persistenceCore config keyring-backend test
-persistenceCore init Name --chain-id core-1
+okp4d config keyring-backend test
+okp4d init Name --chain-id okp4-nemeton-1
+okp4d config chain-id okp4-nemeton-1
 ```
 
 ## Download Genesis
