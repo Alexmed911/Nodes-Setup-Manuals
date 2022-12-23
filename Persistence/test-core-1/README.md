@@ -113,7 +113,7 @@ sudo systemctl stop persistenceCore
 cp $HOME/.persistenceCore/data/priv_validator_state.json $HOME/.persistenceCore/priv_validator_state.json.backup
 rm -rf $HOME/.persistenceCore/data
 SNAP_NAME=$(curl -s http://snapshots.autostake.net/test-core-1/ | egrep -o ">test-core-1.*.tar.lz4" | tr -d ">" | tail -1)
-wget -O - http://snapshots.autostake.net/test-core-1/$SNAP_NAME | lz4 -d | tar -xvf -C $HOME/.persistenceCore
+wget -O - http://snapshots.autostake.net/test-core-1/$SNAP_NAME | lz4 -dc - | tar -xf - -C  $HOME/.persistenceCore
 mv $HOME/.persistenceCore/priv_validator_state.json.backup $HOME/.persistenceCore/data/priv_validator_state.json
 sudo systemctl restart persistenceCore && journalctl -u persistenceCore -f -o cat
 persistenceCore status 2>&1 | jq .SyncInfo
