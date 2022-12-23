@@ -105,37 +105,35 @@ sudo systemctl restart persistenceCore && sudo journalctl -u persistenceCore -f 
 ```
 https://www.allthatnode.com/faucet/persistence.dsrv
 
-
 ```
-## Sync
+## Snapshot
 ```
-persistenceCore status 2>&1 | jq .SyncInfo
-persistenceCore tendermint unsafe-reset-all --home $HOME/.persistenceCore --keep-addr-book
-
 cd $HOME
 sudo systemctl stop persistenceCore
 cp $HOME/.persistenceCore/data/priv_validator_state.json $HOME/.persistenceCore/priv_validator_state.json.backup
 rm -rf $HOME/.persistenceCore/data
-wget http://sifchain.snapshot.stavr.tech:5109/sifchain/sifchain-snap.tar.lz4 && lz4 -c -d $HOME/sifchain-snap.tar.lz4 | tar -x -C $HOME/.sifnoded --strip-components 2
-rm -rf sifchain-snap.tar.lz4
-mv $HOME/.sifnoded/priv_validator_state.json.backup $HOME/.sifnoded/data/priv_validator_state.json
-sudo systemctl restart sifnoded && journalctl -u sifnoded -f -o cat
+SNAP_NAME=$(curl -s http://snapshots.autostake.net/test-core-1/ | egrep -o ">test-core-1.*.tar.lz4" | tr -d ">" | tail -1)
+wget -O - http://snapshots.autostake.net/test-core-1/$SNAP_NAME | lz4 -d | tar -xvf -C $HOME/.persistenceCore
+mv $HOME/.persistenceCore/priv_validator_state.json.backup $HOME/.persistenceCore/data/priv_validator_state.json
+sudo systemctl restart persistenceCore && journalctl -u persistenceCore -f -o cat
+persistenceCore status 2>&1 | jq .SyncInfo
 ```
 ## Create validator
 ```
-defundd tx staking create-validator  \      
-  --amount 1000000ufetf \
-  --from wallet \
-  --commission-max-change-rate "0.1" \
-  --commission-max-rate "0.2" \
-  --commission-rate "0.05" \
-  --min-self-delegation "1" \
-  --pubkey  $(defundd tendermint show-validator) \
-  --moniker=Moniker \
-  --chain-id defund-private-3 \
-  --website="" \
-  --identity="" \
-  --details="" \
-  -y
+persistenceCore tx staking create-validator \
+--from wallet \
+--amount 999000uxprt \
+--pubkey "$(persistenceCore tendermint show-validator)" \
+--chain-id test-core-1 \
+--moniker="Name" \
+--commission-max-change-rate=0.01 \
+--commission-max-rate=1.0 \
+--commission-rate=0.05 \
+--min-self-delegation="1" \
+--website="" \
+--identity="" \
+--details "" \
+--security-contact="" \
+--fees=30uxprt
   
    # if use another port --node "tcp://127.0.0.1:$$657"
