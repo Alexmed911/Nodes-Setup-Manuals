@@ -147,4 +147,11 @@ persistenceCore tx staking create-validator \
 ```
 persistenceCore tx staking delegate $Valoper 2000000uxprt --from=wallet --chain-id=core-1 --gas=175000 --fees=40uxprt
 ```
-
+##  Balance
+```
+persistenceCore q bank balances $(persistenceCore keys show wallet -a)
+```
+##  Reset
+```
+persistenceCore tendermint unsafe-reset-all --home $HOME/.persistenceCore --keep-addr-book
+```
