@@ -146,3 +146,16 @@ persistenceCore tx staking create-validator \
 --fees=30uxprt
   
    # if use another port --node "tcp://127.0.0.1:$$657"
+  ``` 
+   ##  Delegate stake
+```
+persistenceCore tx staking delegate $Valoper 2000000uxprt --from=wallet --chain-id=core-1 --gas=175000 --fees=40uxprt
+```
+##  Balance
+```
+persistenceCore q bank balances $(persistenceCore keys show wallet -a)
+```
+##  Reset
+```
+persistenceCore tendermint unsafe-reset-all --home $HOME/.persistenceCore --keep-addr-book
+```
