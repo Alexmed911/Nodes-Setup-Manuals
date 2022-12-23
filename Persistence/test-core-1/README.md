@@ -37,7 +37,14 @@ make install
 persistenceCore version         
 #v6.0.0-rc4
 ```
-
+## Update 23.12.22
+```
+cd $HOME/persistenceCore
+git pull
+git checkout v6.0.0-rc4
+make build
+cp build/persistenceCore /root/go/bin
+```
 ## Initialize the node
 ```
 persistenceCore config keyring-backend test
