@@ -113,6 +113,9 @@ mv $HOME/.okp4d/priv_validator_state.json.backup $HOME/.okp4d/data/priv_validato
 sudo systemctl restart okp4d && journalctl -u okp4d -f -o cat
 okp4d status 2>&1 | jq .SyncInfo
 ```
+## Faucet
+https://discord.com/channels/946759919678406696/1034483599996620820
+```
 ## Create validator
 ```
 okp4d tx staking create-validator \
