@@ -107,9 +107,8 @@ sudo systemctl restart okp4d && sudo journalctl -u okp4d -f -o cat
 cd $HOME
 sudo systemctl stop okp4d
 cp $HOME/.okp4d/data/priv_validator_state.json $HOME/.okp4d/priv_validator_state.json.backup
-rm -rf $HOME/.okp4d/data
-SNAP_NAME=$(curl -s http://snapshots.autostake.net/okp4-nemeton-1/ | egrep -o ">okp4-nemeton-1.*.tar.lz4" | tr -d ">" | tail -1)
-wget -O - http://snapshots.autostake.net/okp4-nemeton-1/$SNAP_NAME | lz4 -dc - | tar -xf - -C  $HOME/.okp4d
+okp4d tendermint unsafe-reset-all --home $HOME/.okp4d --keep-addr-book
+curl -L https://snap.nodeist.net/t/okp4/okp4.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.okp4d --strip-components 2
 mv $HOME/.okp4d/priv_validator_state.json.backup $HOME/.okp4d/data/priv_validator_state.json
 sudo systemctl restart okp4d && journalctl -u okp4d -f -o cat
 okp4d status 2>&1 | jq .SyncInfo
