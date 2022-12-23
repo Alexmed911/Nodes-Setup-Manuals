@@ -63,15 +63,17 @@ persistenceCore keys add [key_name]
 persistenceCore keys add [key_name] --recover
 ```
 
-## Configure Peers/Gas-prices
+## Configure Peers/Gas-prices/Indexing
 ```
 sed -i 's|^minimum-gas-prices *=.*|minimum-gas-prices = "0.0001uxprt"|g' $HOME/.persistenceCore/config/app.toml
 peers="f85b3dcefb23eae3109cbc89014123ad6e553676@persistence-testnet-statesync.allthatnode.com:26656,1ea969844bd7c7b4268a450222f278bbc9ca32d0@65.1.133.119:26656,a530147d623ef4cbb9d61d06c5e8ddd04180d972@13.208.223.192:26656, 10e69554d68b3c737a7c6bb55938f38e6b547ea7@220.76.21.184:43006, 642cba81f229c50457008410ab5a7a3e6b7b39fe@85.214.61.70:26656, e6f73a89cce68ca961517cf861dbf294a03ad340@18.179.50.45:26656, d4738dfdeede1047076de9ddcc3bef269bdfb898@35.223.239.9:26656, d1fe16cbd078a56465ad2f02bfbf3c8a22253790@13.125.252.209:26656, 723218672704e92a65100ddc28cd5719ada07686@3.25.196.255:26656, e46e42065d8fb108b8f2add2539b16b01f0544f4@13.244.233.149:26656,1ea969844bd7c7b4268a450222f278bbc9ca32d0@65.1.133.119:26656"
 sed -i -e 's|^seeds *=.*|seeds = "'$seeds'"|; s|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.persistenceCore/config/config.toml
+indexer="null" && \
+sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.persistenceCore/config/config.toml
 ```
 ## Download Addrbook
 ```
-wget -O $HOME/.defund/config/addrbook.json "https://raw.githubusercontent.com/Alexmed911/Nodes-Setup-Manuals/main/Persistence/test-core-1/addrbook.json"
+wget -O $HOME/.persistenceCore/config/addrbook.json "https://raw.githubusercontent.com/Alexmed911/Nodes-Setup-Manuals/main/Persistence/test-core-1/addrbook.json"
 ```
 ## Pruning
 ```
