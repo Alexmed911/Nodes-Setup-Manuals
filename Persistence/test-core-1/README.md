@@ -1,10 +1,10 @@
 # Persistence Testnet (test-core-1)
 
-![image](https://persistence.one/static/media/logo.9343ad4e.svg)
+![image](https://www.marketbeat.com/logos/cryptocurrencies/persistence-XPRT.png?v=2022-10-05)
 
-## <a href="https://defund.app/">🌎 Website </a>
-## <a href="https://discord.gg/bWZqS6xBcK">💎 Discord </a>
-## <a href="https://defund.explorers.guru/">🚀 Explorer </a>
+## <a href="https://persistence.one/">🌎 Website </a>
+## <a href="https://discord.gg/qXRmTTGcYD">💎 Discord </a>
+## <a href="https://testnet.ping.pub/test-core-1">🚀 Explorer </a>
 
 # Manual Setup
 
