@@ -1,6 +1,6 @@
-# Defund Testnet (defund-private-3)
+# Persistence Testnet (test-core-1)
 
-![image](https://www.defund.app/images/Defund-2.png)
+![image](https://persistence.one/static/media/logo.9343ad4e.svg)
 
 ## <a href="https://defund.app/">🌎 Website </a>
 ## <a href="https://discord.gg/bWZqS6xBcK">💎 Discord </a>
