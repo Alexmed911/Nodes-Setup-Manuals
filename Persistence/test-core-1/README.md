@@ -29,45 +29,42 @@ go version
 
 ```
 cd $HOME
-rm -rf defund
-git clone https://github.com/defund-labs/defund.git
-cd defund
-git checkout v0.2.1
+git clone https://github.com/persistenceOne/persistenceCore.git
+cd persistenceCore
+git fetch --tags
+git checkout v6.0.0-rc4
 make install
-defundd version         
-#v0.2.1
+persistenceCore version         
+#v6.0.0-rc4
 ```
 
 ## Initialize the node
 ```
-defundd config keyring-backend test
-defundd config chain-id defund-private-3
-defundd init $Moniker-name --chain-id defund-private-3
+persistenceCore config keyring-backend test
+persistenceCore init Name --chain-id test-core-1
 ```
 
 ## Download Genesis
 ```
-wget -O defund-private-3-gensis.tar.gz https://github.com/defund-labs/testnet/raw/main/defund-private-3/defund-private-3-gensis.tar.gz
-sudo tar -xvzf defund-private-3-gensis.tar.gz -C $HOME/.defund/config
-rm defund-private-3-gensis.tar.gz
-sha256sum $HOME/.defund/config/genesis.json
-# 1a10121467576ab6f633a14f82d98f0c39ab7949102a77ab6478b2b2110109e3
+wget -O $HOME/.persistenceCore/config/genesis.json "https://raw.githubusercontent.com/Alexmed911/Nodes-Setup-Manuals/main/Persistence/test-core-1/genesis.json"
+sha256sum $HOME/.persistenceCore/config/genesis.json
+# 66d0ffe2912176907e62e94bbec3b20b8ac4171723378e6054123f513482d782
 ```
 ## Create/recover wallet
 ```
-defundd keys add wallet
-defundd keys add wallet --recover
+persistenceCore keys add [key_name]
+persistenceCore keys add [key_name] --recover
 ```
 
 ## Configure Peers/Gas-prices
 ```
-sed -i 's|^minimum-gas-prices *=.*|minimum-gas-prices = "0.0001ufetf"|g' $HOME/.defund/config/app.toml
-peers="263616dba779061a18ded71dddb92928ea27a4ba@43.154.83.15:26656,e108c39c307864acbeceda3f4b2c77c99ec1bddd@185.16.38.136:36656,e4677ff91a0bfec8949de0c2d531b4bbffcb0ceb@92.119.112.231:36656,85b021ed71173a0825736891b06592a8eee7b4ca@43.156.112.45:26656,bdcaabb2384b1a59d12fbd57dd1d74a58edaf1b2@175.24.183.235:26656,45b50b7ad8df4d2661fc6f510bd9d490b5ec253d@43.134.202.178:26656,43452645f84db6827452f32869ddf3ce585937c5@43.156.111.103:26656,257de7d6825037b6c6de16aac4ebb9efd641b8a6@43.156.111.241:26656,58aef46a0286a6d50a7f687bfc35d62f85feec10@107.174.63.166:26656,c8fb3ab19dfac9f75085cb5e4fff36845773d8a6@43.154.60.157:26656,77b3dcacd513f7f7fa1b0247d716f464ad61e94d@65.109.65.210:34656,966e31c78c08aae8c74aa12702126141fb9cef7a@185.165.240.179:24666,92b164431c37b1b8e8cb66cbabcd688108c7479c@43.130.228.99:26656,38d23d7332b035eae29ba0abda13d32906c78c09@65.108.159.90:26656,ce62e6e53805ceae1f8f1087c5f7f6da13049cec@43.130.242.40:26656,53e2240528947ff8f7b037d347b7258f05ce88f0@89.179.68.98:27656"
-sed -i -e 's|^seeds *=.*|seeds = "'$seeds'"|; s|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.defund/config/config.toml
+sed -i 's|^minimum-gas-prices *=.*|minimum-gas-prices = "0.0001uxprt"|g' $HOME/.persistenceCore/config/app.toml
+peers="f85b3dcefb23eae3109cbc89014123ad6e553676@persistence-testnet-statesync.allthatnode.com:26656,1ea969844bd7c7b4268a450222f278bbc9ca32d0@65.1.133.119:26656,a530147d623ef4cbb9d61d06c5e8ddd04180d972@13.208.223.192:26656, 10e69554d68b3c737a7c6bb55938f38e6b547ea7@220.76.21.184:43006, 642cba81f229c50457008410ab5a7a3e6b7b39fe@85.214.61.70:26656, e6f73a89cce68ca961517cf861dbf294a03ad340@18.179.50.45:26656, d4738dfdeede1047076de9ddcc3bef269bdfb898@35.223.239.9:26656, d1fe16cbd078a56465ad2f02bfbf3c8a22253790@13.125.252.209:26656, 723218672704e92a65100ddc28cd5719ada07686@3.25.196.255:26656, e46e42065d8fb108b8f2add2539b16b01f0544f4@13.244.233.149:26656,1ea969844bd7c7b4268a450222f278bbc9ca32d0@65.1.133.119:26656"
+sed -i -e 's|^seeds *=.*|seeds = "'$seeds'"|; s|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.persistenceCore/config/config.toml
 ```
 ## Download Addrbook
 ```
-wget -O $HOME/.defund/config/addrbook.json "https://raw.githubusercontent.com/Alexmed911/Nodes-Setup-Manuals/main/Defund/addrbook.json"
+wget -O $HOME/.defund/config/addrbook.json "https://raw.githubusercontent.com/Alexmed911/Nodes-Setup-Manuals/main/Persistence/test-core-1/addrbook.json"
 ```
 ## Pruning
 ```
@@ -75,23 +72,25 @@ pruning="custom"
 pruning_keep_recent="100"
 pruning_keep_every="0"
 pruning_interval="10"
-sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.defund/config/app.toml
-sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.defund/config/app.toml
-sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.defund/config/app.toml
-sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.defund/config/app.toml
+sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.persistenceCore/config/config.toml
+sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.persistenceCore/config/config.toml
+sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.persistenceCore/config/config.toml
+sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.persistenceCore/config/config.toml
 ```
 ## Create Service
 ```
-sudo tee /etc/systemd/system/defundd.service > /dev/null << EOF
+sudo tee /etc/systemd/system/persistenceCore.service > /dev/null <<EOF
 [Unit]
-Description=Defund Node
+Description=persistenceCore
 After=network-online.target
+
 [Service]
 User=$USER
-ExecStart=$(which defundd) start
+ExecStart=$(which persistenceCore) start
 Restart=on-failure
-RestartSec=5
+RestartSec=3
 LimitNOFILE=65535
+
 [Install]
 WantedBy=multi-user.target
 EOF
@@ -99,13 +98,28 @@ EOF
 ## Start Node Service
 ```
 sudo systemctl daemon-reload
-sudo systemctl enable defundd
-sudo systemctl restart defundd && sudo journalctl -u defundd -f -o cat
+sudo systemctl enable persistenceCore
+sudo systemctl restart persistenceCore && sudo journalctl -u persistenceCore -f -o cat
+```
+## Faucet
+```
+https://www.allthatnode.com/faucet/persistence.dsrv
+
+
 ```
 ## Sync
 ```
-defundd status 2>&1 | jq .SyncInfo
-defundd status 2>&1 | jq .NodeInfo
+persistenceCore status 2>&1 | jq .SyncInfo
+persistenceCore tendermint unsafe-reset-all --home $HOME/.persistenceCore --keep-addr-book
+
+cd $HOME
+sudo systemctl stop persistenceCore
+cp $HOME/.persistenceCore/data/priv_validator_state.json $HOME/.persistenceCore/priv_validator_state.json.backup
+rm -rf $HOME/.persistenceCore/data
+wget http://sifchain.snapshot.stavr.tech:5109/sifchain/sifchain-snap.tar.lz4 && lz4 -c -d $HOME/sifchain-snap.tar.lz4 | tar -x -C $HOME/.sifnoded --strip-components 2
+rm -rf sifchain-snap.tar.lz4
+mv $HOME/.sifnoded/priv_validator_state.json.backup $HOME/.sifnoded/data/priv_validator_state.json
+sudo systemctl restart sifnoded && journalctl -u sifnoded -f -o cat
 ```
 ## Create validator
 ```
