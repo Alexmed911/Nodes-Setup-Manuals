@@ -114,6 +114,7 @@ sudo systemctl restart okp4d && journalctl -u okp4d -f -o cat
 okp4d status 2>&1 | jq .SyncInfo
 ```
 ## Faucet
+```
 https://discord.com/channels/946759919678406696/1034483599996620820
 ```
 ## Create validator
@@ -134,7 +135,7 @@ okp4d tx staking create-validator \
 --security-contact="" \
 --fees=1000000uknow
   
-   # if use another port --node "tcp://127.0.0.1:$$657"
+# if use another port --node "tcp://127.0.0.1:$$657"
   ``` 
 ##  Delegate stake
 ```
