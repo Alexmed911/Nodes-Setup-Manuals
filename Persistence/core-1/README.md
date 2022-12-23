@@ -42,7 +42,7 @@ cd $HOME/persistenceCore
 git pull
 git checkout v5.0.0
 make build
-cp build/persistenceCore
+cp build/persistenceCore /root/go/bin
 ```
 ## Initialize the node
 ```
