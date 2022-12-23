@@ -1,6 +1,6 @@
 # Persistence Testnet (test-core-1)
 
-![image]center(https://icodrops.com/wp-content/uploads/2020/09/Persistence_cover.jpeg)
+![image](https://icodrops.com/wp-content/uploads/2020/09/Persistence_cover.jpeg)
 
 ## <a href="https://persistence.one/">🌎 Website </a>
 ## <a href="https://discord.gg/qXRmTTGcYD">💎 Discord </a>
