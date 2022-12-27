@@ -42,6 +42,7 @@ persistenceCore version
 ```
 cd $HOME/persistenceCore
 git pull
+git fetch --tags
 git checkout v6.0.0-rc5
 make build
 cp build/persistenceCore /root/go/bin
