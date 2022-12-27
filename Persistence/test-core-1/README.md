@@ -32,16 +32,17 @@ cd $HOME
 git clone https://github.com/persistenceOne/persistenceCore.git
 cd persistenceCore
 git fetch --tags
-git checkout v6.0.0-rc4
+git checkout v6.0.0-rc5
 make install
+source $HOME/.bash_profile
 persistenceCore version         
-#v6.0.0-rc4
+#v6.0.0-rc5
 ```
-## Update 23.12.22
+## Update 27.12.22
 ```
 cd $HOME/persistenceCore
 git pull
-git checkout v6.0.0-rc4
+git checkout v6.0.0-rc5
 make build
 cp build/persistenceCore /root/go/bin
 ```
