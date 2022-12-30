@@ -62,11 +62,6 @@ sudo systemctl restart docker
 #Test nvidia-smi with the latest official CUDA image
 docker run --gpus all nvidia/cuda:11.4.0-base nvidia-smi
 ```
-## Create/recover wallet
-```
-docker exec -ti bostrom cyber keys add Name
-docker exec -ti bostrom cyber keys add Name --recover
-```
 ## Start Node 
 ```
 mkdir $HOME/.cyber
@@ -74,6 +69,11 @@ mkdir $HOME/.cyber/data
 mkdir $HOME/.cyber/config
 
 docker run -d --gpus all --name=bostrom --restart always -p 26656:26656 -p 26657:26657 -p 1317:1317 -e ALLOW_SEARCH=false -v $HOME/.cyber:/root/.cyber  cyberd/bostrom:dragonberry-cuda11.4
+```
+## Create/recover wallet
+```
+docker exec -ti bostrom cyber keys add Name
+docker exec -ti bostrom cyber keys add Name --recover
 ```
 
 ## Configure Peers/Gas-prices/Indexing
@@ -104,7 +104,8 @@ sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $
 #Visit and download actual pruned snapshot
 https://jupiter.cybernode.ai/shared/
 
-
+wget https://jupiter.cybernode.ai/shared/bostrom_pruned_6161577_2022-12-26.tar
+tar -xvf bostrom_pruned_6161577_2022-12-26.tar -C $HOME/.cyber
 
 ```
 ## Create validator
@@ -129,7 +130,7 @@ docker exec -ti bostrom cyber tx staking create-validator \
   ``` 
 ##  Delegate stake
 ```
-okp4d tx staking delegate $Valoper 10000000uknow --from=wallet --chain-id=okp4-nemeton-1 --gas=auto
+docker exec -ti bostrom pussy tx staking delegate boostromvaloper 9999999991000boot --from=wallet --chain-id=boostrom --gas=300000 --keyring-backend file --fees=200boot
 ```
 ##  Unjail
 ```
@@ -137,4 +138,4 @@ docker exec -ti bostrom cyber tx slashing unjail --from=Name --chain-id bostrom 
 ```
 ##  Reset
 ```
-okp4d tendermint unsafe-reset-all --home $HOME/.okp4d --keep-addr-book
+cyber tendermint unsafe-reset-all --home root/.cyber
