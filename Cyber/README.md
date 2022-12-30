@@ -1,6 +1,6 @@
 # Boostrom Mainnet (bostrom)
 
-![image](https://ibb.co/VgFhLSs)
+![image](https://freeimage.host/i/HuftYrb)
 
 ## <a href="https://okp4.network/">🌎 Website </a>
 ## <a href="https://discord.gg/wNEuAx93E7">💎 Discord </a>
