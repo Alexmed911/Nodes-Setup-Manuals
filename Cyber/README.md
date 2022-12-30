@@ -86,7 +86,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.cyber/config/config.t
 ```
 ## Download Addrbook
 ```
-wget -O $HOME/.okp4d/config/addrbook.json "https://raw.githubusercontent.com/Alexmed911/Nodes-Setup-Manuals/main/Cyber/addrbook.json"
+wget -O $HOME/.cyber/config/addrbook.json "https://raw.githubusercontent.com/Alexmed911/Nodes-Setup-Manuals/main/Cyber/addrbook.json"
 ```
 ## Pruning
 ```
@@ -130,7 +130,7 @@ docker exec -ti bostrom cyber tx staking create-validator \
   ``` 
 ##  Delegate stake
 ```
-docker exec -ti bostrom pussy tx staking delegate boostromvaloper 9999999991000boot --from=wallet --chain-id=boostrom --gas=300000 --keyring-backend file --fees=200boot
+docker exec -ti bostrom cyber tx staking delegate boostromvaloper 9999999991000boot --from=wallet --chain-id=boostrom --gas=300000 --keyring-backend file --fees=200boot
 ```
 ##  Unjail
 ```
