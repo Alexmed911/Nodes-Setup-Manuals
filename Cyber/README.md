@@ -1,6 +1,6 @@
-# OKP4 Testnet (okp4-nemeton-1)
+# Boostrom Mainnet (bostrom)
 
-![image](https://github.com/okp4/.github/raw/main/profile/static/okp4-banner.webp)
+![image](https://ibb.co/VgFhLSs)
 
 ## <a href="https://okp4.network/">🌎 Website </a>
 ## <a href="https://discord.gg/wNEuAx93E7">💎 Discord </a>
