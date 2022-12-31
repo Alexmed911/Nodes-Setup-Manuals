@@ -31,7 +31,7 @@ sudo apt update
 sudo apt install -y ubuntu-drivers-common
 ubuntu-drivers devices
 
-You should see something similar to this:
+#You should see something similar to this:
 
 == /sys/devices/pci0000:00/0000:00:01.0/0000:01:00.0 ==
 modalias : pci:v000010DEd00001BA1sv00001462sd000011E4bc03sc00i00
