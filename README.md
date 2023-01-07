@@ -1,8 +1,8 @@
 
 # 👉 🖥 Nodes-Setup-Manuals 🧑‍💻
 
-### This repository contains guides and manuals for installing nodes in the Cosmos Ecosystem and various networks. 
-Use with pleasure ;)
+### This repository contains guides and manuals for installing nodes in the Cosmos Ecosystem and various networks. Use with pleasure ;)
+
 
 <table width='200%'>
   <tr>
