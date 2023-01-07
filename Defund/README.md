@@ -1,6 +1,6 @@
 # Defund Testnet (defund-private-3)
 
-![image](https://www.defund.app/images/Defund-2.png)
+![image](https://mobile.twitter.com/defund_finance/photo)
 
 ## <a href="https://defund.app/">🌎 Website </a>
 ## <a href="https://discord.gg/bWZqS6xBcK">💎 Discord </a>
