@@ -1,4 +1,4 @@
-# OKP4 Testnet (okp4-nemeton-1)
+# Lava Network Testnet (lava-testnet-1)
 
 ![image](https://mirror-media.imgix.net/publication-images/gq4KFLkILtGC7LZhNp9Gr.jpeg?height=800&width=1600&h=800&w=1600&auto=compress)
 
@@ -29,43 +29,41 @@ go version
 
 ```
 cd $HOME
-git clone https://github.com/okp4/okp4d.git
-cd okp4d
-git checkout v3.0.0
-make install
-okp4d version         
-#v3.0.0
+git clone https://github.com/K433QLtr6RA9ExEq/GHFkqmTzpdNLDd6T.git
+wget https://lava-binary-upgrades.s3.amazonaws.com/testnet/v0.4.0/lavad
+chmod +x lavad
+mv lavad $HOME/go/bin/
+lavad version         
+#0.4.0-rc2-e2c69db
 ```
 ## Initialize the node
 ```
-okp4d config keyring-backend test
-okp4d init Name --chain-id okp4-nemeton-1
-okp4d config chain-id okp4-nemeton-1
+lavad init MONIKER --chain-id lava-testnet-1
 ```
 
 ## Download Genesis
 ```
-wget -O $HOME/.okp4d/config/genesis.json "https://raw.githubusercontent.com/Alexmed911/Nodes-Setup-Manuals/main/OKP4/genesis.json"
-sha256sum $HOME/.okp4d/config/genesis.json
-# 2ec25f81cc2abecbc0da3de45b052ea3314d0d658b1b7f4c7b6a48d09254c742
+wget -O $HOME/.lava/config/genesis.json "https://raw.githubusercontent.com/Alexmed911/Nodes-Setup-Manuals/main/Lava/genesis.json"
+sha256sum $HOME/.lava/config/genesis.json
+# 72170a8a7314cb79bc57a60c1b920e26457769667ce5c2ff0595b342c0080d78
 ```
 ## Create/recover wallet
 ```
-okp4d keys add [key_name]
-okp4d keys add [key_name] --recover
+lavad keys add [key_name]
+lavad keys add [key_name] --recover
 ```
 
 ## Configure Peers/Gas-prices/Indexing
 ```
-sed -i 's|^minimum-gas-prices *=.*|minimum-gas-prices = "0.001uknow"|g' $HOME/.okp4d/config/app.toml
-peers="9c462b1c0ba63115bd70c3bd4f2935fcb93721d0@65.21.170.3:42656,a4a96019d2fbc1b5df07940cd971585311166acd@65.108.206.118:61356,ee4c5d9a8ac7401f996ef9c4d79b8abda9505400@144.76.97.251:12656,2e85c1d08cfca6982c74ef2b67251aa459dd9b2f@65.109.85.170:43656,264256d32511c512a0a9d4098310a057c9999fd1@okp4.sergo.dev:12233,4ea26ce893d8f4f89a7b49b9bd77e0fbd914e029@65.109.88.162:36656,8d8fdad759361a57121903632adbd66ad072b1ab@okp4-testnet.nodejumper.io:29656,e3c602b146121c88d350bd7e0f6ce8977e1aacff@161.97.122.216:26656,3c805c2dead7b7a3a1d3ba2399d4d62153322413@65.108.2.41:36656,9d1482bc31fb4578a5c7f7f65c4e0aaf2dfc2336@213.239.215.77:34656,a7f1dcf7441761b0e0e1f8c6fdc79d3904c22c01@[2a02:c206:2093:4875::1]:36656,a7f1dcf7441761b0e0e1f8c6fdc79d3904c22c01@38.242.150.63:36656,99f6675049e22a0216af0e2447e7a4c5021874cd@142.132.132.200:28656,9392c27a9a561c31e7a920dc6f577d663c473ef8@154.12.225.88:26656"
-sed -i -e 's|^seeds *=.*|seeds = "'$seeds'"|; s|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.okp4d/config/config.toml
+sed -i 's|^minimum-gas-prices *=.*|minimum-gas-prices = "0ulava"|g' $HOME/.lava/config/app.toml
+peers="ac7cefeff026e1c616035a49f3b00c78da63c2e9@18.215.128.248:26656,6c988ad39fef48abd5504fda547d561fb8a60c3a@130.185.119.243:33656,2c2353c872b0c5af562c518b1aa48a2649a4c927@65.108.199.62:11656,4f9120f706512162fbe4f39aac78b9924efbec58@65.109.92.235:11036,f9190a58670c07f8202abfd9b5b14187b18d755b@144.76.97.251:27656,f120685de6785d8ee0eadfca42407c6e10593e74@144.76.90.130:32656,6641a193a7004447c1b49b8ffb37a90682ce0fb9@65.108.78.116:13656,c19965fe8a1ea3391d61d09cf589bca0781d29fd@162.19.217.52:26656,0516c4d11552b334a683bdb4410fa22ef7e3f8ba@65.21.239.60:11656,dabe2e77bd6b9278f484b34956750e9470527ef7@178.18.246.118:26656,24a2bb2d06343b0f74ed0a6dc1d409ce0d996451@188.40.98.169:27656,b7c3cedc778d93296f179373c3bc6a521e4b682e@65.109.69.160:30656,c678ae0fd7b754615e55bba2589a86e60fc8d45c@136.243.88.91:7140,a65de5f01394199366c182a18d718c9e3ef7f981@159.148.146.132:26656,5c2a752c9b1952dbed075c56c600c3a79b58c395@lava.testnet.peer.autostake.net:27066"
+sed -i -e 's|^seeds *=.*|seeds = "'$seeds'"|; s|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.lava/config/config.toml
 indexer="null" && \
-sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.okp4d/config/config.toml
+sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.lava/config/config.toml
 ```
 ## Download Addrbook
 ```
-wget -O $HOME/.okp4d/config/addrbook.json "https://raw.githubusercontent.com/Alexmed911/Nodes-Setup-Manuals/main/OKP4/addrbook.json"
+wget -O $HOME/.lava/config/addrbook.json "https://raw.githubusercontent.com/Alexmed911/Nodes-Setup-Manuals/main/Lava/addrbook.json"
 ```
 ## Pruning
 ```
@@ -73,21 +71,21 @@ pruning="custom"
 pruning_keep_recent="100"
 pruning_keep_every="0"
 pruning_interval="10"
-sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.okp4d/config/config.toml
-sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.okp4d/config/config.toml
-sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.okp4d/config/config.toml
-sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.okp4d/config/config.toml
+sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.lava/config/config.toml
+sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.lava/config/config.toml
+sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.lava/config/config.toml
+sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.lava/config/config.toml
 ```
 ## Create Service
 ```
-sudo tee /etc/systemd/system/okp4d.service > /dev/null <<EOF
+sudo tee /etc/systemd/system/lavad.service > /dev/null <<EOF
 [Unit]
-Description=OKP4 Node
+Description=Lava
 After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$(which okp4d) start
+ExecStart=$(which lavad) start
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=65535
@@ -99,52 +97,55 @@ EOF
 ## Start Node Service
 ```
 sudo systemctl daemon-reload
-sudo systemctl enable okp4d
-sudo systemctl restart okp4d && sudo journalctl -u okp4d -f -o cat
+sudo systemctl enable lavad
+sudo systemctl restart lavad && sudo journalctl -u lavad -f -o cat
 ```
 ## Snapshot
 ```
-cd $HOME
-sudo systemctl stop okp4d
-cp $HOME/.okp4d/data/priv_validator_state.json $HOME/.okp4d/priv_validator_state.json.backup
-okp4d tendermint unsafe-reset-all --home $HOME/.okp4d --keep-addr-book
-curl -L https://snap.nodeist.net/t/okp4/okp4.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.okp4d --strip-components 2
-mv $HOME/.okp4d/priv_validator_state.json.backup $HOME/.okp4d/data/priv_validator_state.json
-sudo systemctl restart okp4d && journalctl -u okp4d -f -o cat
-okp4d status 2>&1 | jq .SyncInfo
+cd $HOME/.lava
+sudo systemctl stop lavad
+cp $HOME/.lava/data/priv_validator_state.json $HOME/.lava/priv_validator_state.json.backup
+lavad tendermint unsafe-reset-all --home $HOME/.lava --keep-addr-book
+SNAP_NAME=$(curl -s http://snapshots.autostake.net/lava-testnet-1/ | egrep -o ">lava-testnet-1.*.tar.lz4" | tr -d ">" | tail -1)
+wget -O - http://snapshots.autostake.net/lava-testnet-1/$SNAP_NAME | lz4 -d | tar -xvf -
+mv $HOME/.lava/priv_validator_state.json.backup $HOME/.lava/data/priv_validator_state.json
+sudo systemctl restart lavad && journalctl -u lavad -f -o cat
+lavad status 2>&1 | jq .SyncInfo
 ```
 ## Faucet
 ```
-https://discord.com/channels/946759919678406696/1034483599996620820
+https://discord.com/channels/963778337904427018/1059851367717556314
 ```
 ## Create validator
 ```
-okp4d tx staking create-validator \
+lavad tx staking create-validator \
 --from wallet \
---amount 1000000uknow \
---pubkey "$(okp4d tendermint show-validator)" \
---chain-id okp4-nemeton-1 \
+--amount 1000000ulava \
+--pubkey "$(lavad tendermint show-validator)" \
+--chain-id lava-testnet-1 \
 --moniker="Name" \
 --commission-max-change-rate=0.01 \
 --commission-max-rate=1.0 \
---commission-rate=0.05 \
+--commission-rate=0.07 \
 --min-self-delegation="1" \
 --website="" \
 --identity="" \
 --details "" \
 --security-contact="" \
---fees=1000000uknow
+--fees=5000ulava 
+-y
+
   
 # if use another port --node "tcp://127.0.0.1:$$657"
   ``` 
 ##  Delegate stake
 ```
-okp4d tx staking delegate $Valoper 10000000uknow --from=wallet --chain-id=okp4-nemeton-1 --gas=auto
+lavad tx staking delegate $Valoper 10000000ulava --from=wallet --chain-id=lava-testnet-1 --gas=auto
 ```
 ##  Balance
 ```
-okp4d q bank balances $(okp4d keys show wallet -a)
+lavad q bank balances $(lavad keys show wallet -a)
 ```
 ##  Reset
 ```
-okp4d tendermint unsafe-reset-all --home $HOME/.okp4d --keep-addr-book
+lavad tendermint unsafe-reset-all --home $HOME/.lava --keep-addr-book
