@@ -61,7 +61,13 @@
         <img src="https://raw.githubusercontent.com/itrocket-team/testnet_guides/main/logos/humans.jpg?s=200&v=4" width="400" height="150" alt="Figma" />
       </a>
       <br><b>Humans<b>
-    </td>  
+    </td>
+    <td align="center" width="200">
+      <a href="" >
+        <img src="https://stigga.org/gallery_gen/d5be14363aea6f963c2ffcc89bd7221d_126x126.png" width="400" height="150" alt="Figma" />
+      </a>
+      <br><b>Jakal<b>
+    </td>
    </tr>
 </table>
 <br>
