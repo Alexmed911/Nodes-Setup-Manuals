@@ -1,10 +1,10 @@
 # OKP4 Testnet (okp4-nemeton-1)
 
-![image](https://github.com/okp4/.github/raw/main/profile/static/okp4-banner.webp)
+![image](https://mirror-media.imgix.net/publication-images/gq4KFLkILtGC7LZhNp9Gr.jpeg?height=800&width=1600&h=800&w=1600&auto=compress)
 
-## <a href="https://okp4.network/">🌎 Website </a>
-## <a href="https://discord.gg/wNEuAx93E7">💎 Discord </a>
-## <a href="https://okp4.explorers.guru/">🚀 Explorer </a>
+## <a href="https://lavanet.xyz/">🌎 Website </a>
+## <a href="https://discord.gg/mCBzfEbYcF">💎 Discord </a>
+## <a href="https://lava.explorers.guru/">🚀 Explorer </a>
 
 # Manual Setup
 
