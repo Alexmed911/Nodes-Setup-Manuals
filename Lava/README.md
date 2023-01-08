@@ -38,7 +38,7 @@ lavad version
 ```
 ## Initialize the node
 ```
-lavad init MONIKER --chain-id lava-testnet-1
+lavad init Name --chain-id lava-testnet-1
 ```
 
 ## Download Genesis
@@ -49,8 +49,8 @@ sha256sum $HOME/.lava/config/genesis.json
 ```
 ## Create/recover wallet
 ```
-lavad keys add [key_name]
-lavad keys add [key_name] --recover
+lavad keys add key_name
+lavad keys add key_name --recover
 ```
 
 ## Configure Peers/Gas-prices/Indexing
