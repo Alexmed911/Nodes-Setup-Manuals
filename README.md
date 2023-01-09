@@ -45,7 +45,7 @@
       <br><b>Terp<b>
     </td>
      <td align="center" width="200">
-      <a href="" >
+      <a href="https://github.com/Alexmed911/Nodes-Setup-Manuals/tree/main/Uptick" >
         <img src="https://avatars.githubusercontent.com/u/93963159?s=200&v=4" width="400" height="150" alt="Figma" />
       </a>
       <br><b>Uptick<b>
