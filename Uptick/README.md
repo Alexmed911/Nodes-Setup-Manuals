@@ -29,41 +29,41 @@ go version
 
 ```
 cd $HOME
-git clone https://github.com/K433QLtr6RA9ExEq/GHFkqmTzpdNLDd6T.git
-wget https://lava-binary-upgrades.s3.amazonaws.com/testnet/v0.4.0/lavad
-chmod +x lavad
-mv lavad $HOME/go/bin/
-lavad version         
-#0.4.0-rc2-e2c69db
+git clone https://github.com/UptickNetwork/uptick.git
+cd uptick
+git checkout v0.2.4
+make install
+uptick version         
+#0.2.4
 ```
 ## Initialize the node
 ```
-lavad init Name --chain-id lava-testnet-1
+uptickd init Name --chain-id uptick_7000-2
 ```
 
 ## Download Genesis
 ```
-wget -O $HOME/.lava/config/genesis.json "https://raw.githubusercontent.com/Alexmed911/Nodes-Setup-Manuals/main/Lava/genesis.json"
-sha256sum $HOME/.lava/config/genesis.json
-# 72170a8a7314cb79bc57a60c1b920e26457769667ce5c2ff0595b342c0080d78
+wget -O $HOME/.uptickd/config/genesis.json "https://raw.githubusercontent.com/Alexmed911/Nodes-Setup-Manuals/main/Uptick/genesis.json"
+sha256sum $HOME/.uptickd/config/genesis.json
+# f96764c7ae1bc713b2acc87b5320f2d10ee26716b3daa6cc455cb3a3906f05c2
 ```
 ## Create/recover wallet
 ```
-lavad keys add key_name
-lavad keys add key_name --recover
+uptickd keys add key_name
+uptickd keys add key_name --recover
 ```
 
 ## Configure Peers/Gas-prices/Indexing
 ```
-sed -i 's|^minimum-gas-prices *=.*|minimum-gas-prices = "0ulava"|g' $HOME/.lava/config/app.toml
-peers="ac7cefeff026e1c616035a49f3b00c78da63c2e9@18.215.128.248:26656,6c988ad39fef48abd5504fda547d561fb8a60c3a@130.185.119.243:33656,2c2353c872b0c5af562c518b1aa48a2649a4c927@65.108.199.62:11656,4f9120f706512162fbe4f39aac78b9924efbec58@65.109.92.235:11036,f9190a58670c07f8202abfd9b5b14187b18d755b@144.76.97.251:27656,f120685de6785d8ee0eadfca42407c6e10593e74@144.76.90.130:32656,6641a193a7004447c1b49b8ffb37a90682ce0fb9@65.108.78.116:13656,c19965fe8a1ea3391d61d09cf589bca0781d29fd@162.19.217.52:26656,0516c4d11552b334a683bdb4410fa22ef7e3f8ba@65.21.239.60:11656,dabe2e77bd6b9278f484b34956750e9470527ef7@178.18.246.118:26656,24a2bb2d06343b0f74ed0a6dc1d409ce0d996451@188.40.98.169:27656,b7c3cedc778d93296f179373c3bc6a521e4b682e@65.109.69.160:30656,c678ae0fd7b754615e55bba2589a86e60fc8d45c@136.243.88.91:7140,a65de5f01394199366c182a18d718c9e3ef7f981@159.148.146.132:26656,5c2a752c9b1952dbed075c56c600c3a79b58c395@lava.testnet.peer.autostake.net:27066"
-sed -i -e 's|^seeds *=.*|seeds = "'$seeds'"|; s|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.lava/config/config.toml
+sed -i 's|^minimum-gas-prices *=.*|minimum-gas-prices = "0.00auptick"|g' $HOME/.uptickd/config/app.toml
+peers="1f96655ed716ecace89f06f10bc10fad14b9fe61@51.89.232.234:27916,40ffd59440b11d63bfb8e20cfed5b36f282a06b3@154.12.238.247:31656,507999588745d6021c012b736c795a93348ae0cd@95.214.55.155:20656,38d149fd90fdc0cd3509b697ad65ff9f6f20cd8f@65.108.6.45:60956"
+sed -i -e 's|^seeds *=.*|seeds = "'$seeds'"|; s|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.uptickd/config/config.toml
 indexer="null" && \
-sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.lava/config/config.toml
+sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.uptickd/config/config.toml
 ```
 ## Download Addrbook
 ```
-wget -O $HOME/.lava/config/addrbook.json "https://raw.githubusercontent.com/Alexmed911/Nodes-Setup-Manuals/main/Lava/addrbook.json"
+wget -O $HOME/.uptickd/config/addrbook.json "https://raw.githubusercontent.com/Alexmed911/Nodes-Setup-Manuals/main/Uptick/addrbook.json"
 ```
 ## Pruning
 ```
@@ -71,21 +71,21 @@ pruning="custom"
 pruning_keep_recent="100"
 pruning_keep_every="0"
 pruning_interval="10"
-sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.lava/config/config.toml
-sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.lava/config/config.toml
-sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.lava/config/config.toml
-sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.lava/config/config.toml
+sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.uptickd/config/config.toml
+sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.uptickd/config/config.toml
+sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.uptickd/config/config.toml
+sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.uptickd/config/config.toml
 ```
 ## Create Service
 ```
-sudo tee /etc/systemd/system/lavad.service > /dev/null <<EOF
+sudo tee /etc/systemd/system/uptickd.service > /dev/null <<EOF
 [Unit]
-Description=Lava
+Description=Uptick
 After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$(which lavad) start
+ExecStart=$(which uptickd) start
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=65535
@@ -97,32 +97,32 @@ EOF
 ## Start Node Service
 ```
 sudo systemctl daemon-reload
-sudo systemctl enable lavad
-sudo systemctl restart lavad && sudo journalctl -u lavad -f -o cat
+sudo systemctl enable uptickd
+sudo systemctl restart uptickd && sudo journalctl -u uptickd -f -o cat
 ```
 ## Snapshot
 ```
-cd $HOME/.lava
-sudo systemctl stop lavad
-cp $HOME/.lava/data/priv_validator_state.json $HOME/.lava/priv_validator_state.json.backup
-lavad tendermint unsafe-reset-all --home $HOME/.lava --keep-addr-book
-SNAP_NAME=$(curl -s http://snapshots.autostake.net/lava-testnet-1/ | egrep -o ">lava-testnet-1.*.tar.lz4" | tr -d ">" | tail -1)
-wget -O - http://snapshots.autostake.net/lava-testnet-1/$SNAP_NAME | lz4 -d | tar -xvf -
-mv $HOME/.lava/priv_validator_state.json.backup $HOME/.lava/data/priv_validator_state.json
-sudo systemctl restart lavad && journalctl -u lavad -f -o cat
-lavad status 2>&1 | jq .SyncInfo
+cd $HOME/.uptickd
+sudo systemctl stop uptickd
+cp $HOME/.uptickd/data/priv_validator_state.json $HOME/.uptickd/priv_validator_state.json.backup
+uptickd tendermint unsafe-reset-all --home $HOME/.uptickd --keep-addr-book
+wget $(curl -s https://services.staketab.com/backend/uptick-testnet/ | jq -r .snap_link)
+tar -xf $(curl -s https://services.staketab.com/backend/uptick-testnet/ | jq -r .snap_filename) -C $HOME/.uptickd/data/
+mv $HOME/.uptickd/priv_validator_state.json.backup $HOME/.uptickd/data/priv_validator_state.json
+sudo systemctl restart uptickd && journalctl -u uptickd -f -o cat
+uptickd status 2>&1 | jq .SyncInfo
 ```
 ## Faucet
 ```
-https://discord.com/channels/963778337904427018/1059851367717556314
+https://discord.com/channels/781005936260939818/953652276508119060
 ```
 ## Create validator
 ```
-lavad tx staking create-validator \
+uptickd tx staking create-validator \
 --from wallet \
---amount 1000000ulava \
---pubkey "$(lavad tendermint show-validator)" \
---chain-id lava-testnet-1 \
+--amount 1000000auptick \
+--pubkey "$(uptickd tendermint show-validator)" \
+--chain-id uptick_7000-2 \
 --moniker="Name" \
 --commission-max-change-rate=0.01 \
 --commission-max-rate=1.0 \
@@ -132,7 +132,7 @@ lavad tx staking create-validator \
 --identity="" \
 --details "" \
 --security-contact="" \
---fees=5000ulava 
+--fees=1000auptick
 -y
 
   
@@ -140,12 +140,12 @@ lavad tx staking create-validator \
   ``` 
 ##  Delegate stake
 ```
-lavad tx staking delegate $Valoper 10000000ulava --from=wallet --chain-id=lava-testnet-1 --gas=auto
+uptickd tx staking delegate $Valoper 10000000auptick --from=wallet --chain-id=uptick_7000-2 --gas=auto
 ```
 ##  Balance
 ```
-lavad q bank balances $(lavad keys show wallet -a)
+uptickd q bank balances $(uptickd keys show wallet -a)
 ```
 ##  Reset
 ```
-lavad tendermint unsafe-reset-all --home $HOME/.lava --keep-addr-book
+uptickd tendermint unsafe-reset-all --home $HOME/.uptickd --keep-addr-book
