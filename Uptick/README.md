@@ -1,6 +1,6 @@
 # Uptick Network Testnet (uptick_7000-2)
 
-![image]https://miro.medium.com/max/1400/1*aCkSgk39Uhfb-1wzgTy5Pg.png)
+![image](https://miro.medium.com/max/1400/1*aCkSgk39Uhfb-1wzgTy5Pg.png)
 
 ## <a href="https://www.uptick.network/">🌎 Website </a>
 ## <a href="https://discord.gg/479QrBHbq2">💎 Discord </a>
