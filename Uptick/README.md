@@ -1,10 +1,10 @@
-# Lava Network Testnet (lava-testnet-1)
+# Uptick Network Testnet (uptick_7000-2)
 
-![image](https://mirror-media.imgix.net/publication-images/gq4KFLkILtGC7LZhNp9Gr.jpeg?height=800&width=1600&h=800&w=1600&auto=compress)
+![image]https://miro.medium.com/max/1400/1*aCkSgk39Uhfb-1wzgTy5Pg.png)
 
-## <a href="https://lavanet.xyz/">🌎 Website </a>
-## <a href="https://discord.gg/mCBzfEbYcF">💎 Discord </a>
-## <a href="https://lava.explorers.guru/">🚀 Explorer </a>
+## <a href="https://www.uptick.network/">🌎 Website </a>
+## <a href="https://discord.gg/479QrBHbq2">💎 Discord </a>
+## <a href="https://uptick.explorers.guru/">🚀 Explorer </a>
 
 # Manual Setup
 
