@@ -120,9 +120,9 @@ https://discord.com/channels/947911971515293759/984840062871175219
 ```
 nibid tx staking create-validator \
 --from wallet \
---amount 1000000ulava \
+--amount 1000000unibi \
 --pubkey "$(nibid tendermint show-validator)" \
---chain-id lava-testnet-1 \
+--chain-id nibiru-testnet-2 \
 --moniker="Name" \
 --commission-max-change-rate=0.01 \
 --commission-max-rate=1.0 \
@@ -132,7 +132,7 @@ nibid tx staking create-validator \
 --identity="" \
 --details "" \
 --security-contact="" \
---fees=5000ulava 
+--fees=5000unibi 
 -y
 
   
@@ -140,7 +140,7 @@ nibid tx staking create-validator \
   ``` 
 ##  Delegate stake
 ```
-nibid tx staking delegate $Valoper 10000000ulava --from=wallet --chain-id=lava-testnet-1 --gas=auto
+nibid tx staking delegate $Valoper 10000000ulava --from=wallet --chain-id=nibiru-testnet-2 --gas=auto
 ```
 ##  Balance
 ```
