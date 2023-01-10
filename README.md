@@ -32,7 +32,7 @@
     </td>  
     <td align="center" width="200">
       <a href="" >
-        <img src="https://user-images.githubusercontent.com/79756157/205519020-36a7ea20-a9f9-49b2-821a-def2df8d36be.jpg" width="400" height="150"  />
+        <img src="https://pbs.twimg.com/profile_images/1556857504394526721/OyWtRrNP_400x400.jpg" width="400" height="150"  />
       </a>
       <br><b>Nibiru<b>
     </td>
