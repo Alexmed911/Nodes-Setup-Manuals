@@ -1,10 +1,10 @@
-# Lava Network Testnet (lava-testnet-1)
+# Nibiru Testnet (nibiru-testnet-2)
 
-![image](https://mirror-media.imgix.net/publication-images/gq4KFLkILtGC7LZhNp9Gr.jpeg?height=800&width=1600&h=800&w=1600&auto=compress)
+![image](https://techcrunch.com/wp-content/uploads/2022/09/nibiru.jpg?resize=1200,587)
 
-## <a href="https://lavanet.xyz/">🌎 Website </a>
-## <a href="https://discord.gg/mCBzfEbYcF">💎 Discord </a>
-## <a href="https://lava.explorers.guru/">🚀 Explorer </a>
+## <a href="https://nibiru.fi/">🌎 Website </a>
+## <a href="https://discord.gg/dx7WTtuRNR">💎 Discord </a>
+## <a href="https://nibiru.explorers.guru/">🚀 Explorer </a>
 
 # Manual Setup
 
