@@ -52,7 +52,7 @@
     </td>
     <td align="center" width="200">
       <a href="https://github.com/Alexmed911/Nodes-Setup-Manuals/tree/main/Lava" >
-        <img src="https://raw.githubusercontent.com/itrocket-team/testnet_guides/main/logos/lava.jpg?s=200&v=4" width="400" height="150" alt="Figma" />
+        <img src="https://pbs.twimg.com/profile_images/1572932736934940672/YAeBtumE_400x400.jpg" width="400" height="150" alt="Figma" />
       </a>
       <br><b>Lava<b>
     </td>
