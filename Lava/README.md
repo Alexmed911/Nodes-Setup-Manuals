@@ -34,8 +34,6 @@ cd lava
 git fetch --all
 git checkout v0.4.3
 make install
-lavad version
-#v0.4.3
 ```
 ## 11.01.23 Update v0.4.3
 
