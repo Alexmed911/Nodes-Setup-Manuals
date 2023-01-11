@@ -29,16 +29,6 @@ go version
 
 ```
 cd $HOME
-git clone https://github.com/K433QLtr6RA9ExEq/GHFkqmTzpdNLDd6T.git
-wget https://lava-binary-upgrades.s3.amazonaws.com/testnet/v0.4.0/lavad
-chmod +x lavad
-mv lavad $HOME/go/bin/
-lavad version         
-#0.4.0-rc2-e2c69db
-```
-## Update 11.01.23
-```
-cd $HOME
 git clone https://github.com/lavanet/lava
 cd lava
 git fetch --all
@@ -46,6 +36,8 @@ git checkout v0.4.3
 make install
 lavad version
 #v0.4.3
+```
+
 ```
 ## Initialize the node
 ```
