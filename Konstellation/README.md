@@ -144,7 +144,7 @@ knstld tx staking create-validator \
 knstld tx staking delegate $Valoper 1000000udarc --from=wallet --chain-id=darchub --gas=auto
 ```
 ##  Withdraw reward with commision
-```
+
 knstld tx distribution withdraw-rewards $Valoper--from=wallet --commission --chain-id=darchub --gas=auto
 
 ##  Balance
