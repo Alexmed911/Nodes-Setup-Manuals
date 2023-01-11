@@ -37,8 +37,6 @@ make install
 lavad version
 #v0.4.3
 ```
-
-```
 ## Initialize the node
 ```
 lavad init Name --chain-id lava-testnet-1
