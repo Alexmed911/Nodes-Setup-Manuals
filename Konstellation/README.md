@@ -117,7 +117,7 @@ knstld status 2>&1 | jq .SyncInfo
 ```
 knstld tx staking create-validator \
 --from wallet \
---amount 1000000unibi \
+--amount 1000000udarc \
 --pubkey "$(knstld tendermint show-validator)" \
 --chain-id darchub \
 --moniker="Name" \
