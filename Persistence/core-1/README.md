@@ -31,7 +31,7 @@ go version
 cd $HOME
 git clone https://github.com/persistenceOne/persistenceCore.git
 cd persistenceCore
-git checkout v6.0.0
+git checkout v6.1.0
 make install
 persistenceCore version         
 #v6.0.0
@@ -40,7 +40,7 @@ persistenceCore version
 ```
 cd $HOME/persistenceCore
 git pull
-git checkout v6.0.0
+git checkout v6.1.0
 make build
 cp build/persistenceCore /root/go/bin
 ```
