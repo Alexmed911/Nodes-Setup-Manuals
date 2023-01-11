@@ -28,42 +28,43 @@ go version
 ## Install Node
 
 ```
-cd $HOME
-git clone https://github.com/NibiruChain/nibiru
-cd nibiru
-git checkout v0.16.3
-make install
-nibid version         
-#v0.16.3
+git clone https://github.com/knstl/konstellation/
+cd konstellation
+git checkout v0.6.2
+make build
+cd build
+mv knstld home/go/bin/
+knstld version
+#v0.6.2
 ```
 ## Initialize the node
 ```
-nibid init Name --chain-id=nibiru-testnet-2
+knstld init Name --chain-id darchub
 ```
 
 ## Download Genesis
 ```
-wget -O $HOME/.nibid/config/genesis.json "https://raw.githubusercontent.com/Alexmed911/Nodes-Setup-Manuals/main/Nibiru/genesis.json"
-sha256sum $HOME/.nibid/config/genesis.json
-# 5cedb9237c6d807a89468268071647649e90b40ac8cd6d1ded8a72323144880d
+wget -O $HOME/.knstld/config/genesis.json "https://raw.githubusercontent.com/Alexmed911/Nodes-Setup-Manuals/main/Konstellation/genesis.json"
+sha256sum $HOME/.knstld/config/genesis.json
+# f0e98b0749801ba0b2ea5f1eeff72df847ec78bde9b8ff9ca114bedc8afd8763
 ```
 ## Create/recover wallet
 ```
-nibid keys add key_name
-nibid keys add key_name --recover
+knstld keys add key_name
+knstld keys add key_name --recover
 ```
 
 ## Configure Peers/Gas-prices/Indexing
 ```
-sed -i 's|^minimum-gas-prices *=.*|minimum-gas-prices = "0.001unibi"|g' $HOME/.nibid/config/app.toml
-peers="62f26443c930a02f3e166b9db4ecd37b65b042f2@49.12.8.255:26656,178f7dd47502283f9245d24ffcc0a0acc9f661cc@135.181.145.58:26656,0fc167f54fc0d63369763b1519e79c3b400c4bb4@65.108.97.58:2486,1a32af5ac53fc3180327c0045c492140e8b8bcb6@144.91.80.171:26656,bd0117a9200937887d854b14a7ea53f7ba2c81ea@185.245.183.192:46656,76d1973e958a340f7109a3d2bda6436b68f3bc6a@173.212.214.154:46656,888f65c496c3cb5ca345d227e01996506a52f65e@185.209.223.127:39656,bef7f536be357a2d69c643128c7f1c8245b76809@65.21.91.50:26656"
-sed -i -e 's|^seeds *=.*|seeds = "'$seeds'"|; s|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.nibid/config/config.toml
+sed -i 's|^minimum-gas-prices *=.*|minimum-gas-prices = "0.001udarc"|g' $HOME/.knstld/config/app.toml
+peers=""
+sed -i -e 's|^seeds *=.*|seeds = "'$seeds'"|; s|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.knstld/config/config.toml
 indexer="null" && \
-sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.nibid/config/config.toml
+sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.knstld/config/config.toml
 ```
 ## Download Addrbook
 ```
-wget -O $HOME/.nibid/config/addrbook.json "https://raw.githubusercontent.com/Alexmed911/Nodes-Setup-Manuals/main/Nibiru/addrbook.json"
+wget -O $HOME/.knstld/config/addrbook.json "https://raw.githubusercontent.com/Alexmed911/Nodes-Setup-Manuals/main/Konstellation/addrbook.json"
 ```
 ## Pruning
 ```
@@ -71,10 +72,10 @@ pruning="custom"
 pruning_keep_recent="100"
 pruning_keep_every="0"
 pruning_interval="10"
-sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.nibid/config/config.toml
-sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.nibid/config/config.toml
-sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.nibid/config/config.toml
-sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.nibid/config/config.toml
+sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.knstld/config/config.toml
+sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.knstld/config/config.toml
+sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.knstld/config/config.toml
+sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.knstld/config/config.toml
 ```
 ## Create Service
 ```
@@ -97,20 +98,20 @@ EOF
 ## Start Node Service
 ```
 sudo systemctl daemon-reload
-sudo systemctl enable nibid
-sudo systemctl restart nibid && sudo journalctl -u nibid -f -o cat
+sudo systemctl enable knstld
+sudo systemctl restart knstld && sudo journalctl -u knstld -f -o cat
 ```
 ## Snapshot
 ```
-cd $HOME/.nibid
-sudo systemctl stop nibid
-cp $HOME/.nibid/data/priv_validator_state.json $HOME/.nibid/priv_validator_state.json.backup
-nibid tendermint unsafe-reset-all --home $HOME/.nibid --keep-addr-book
-SNAP_NAME=$(curl -s https://snapshots.bccnodes.com/testnets/nibiru/ | egrep -o ">nibiru-testnet-2.*tar" | tail -n 1 | tr -d '>'); \
-wget -O - https://snapshots.bccnodes.com/testnets/nibiru/${SNAP_NAME} | tar xf -
-mv $HOME/.nibid/priv_validator_state.json.backup $HOME/.nibid/data/priv_validator_state.json
-sudo systemctl restart nibid && journalctl -u nibid -f -o cat
-nibid status 2>&1 | jq .SyncInfo
+cd $HOME/.knstld
+sudo systemctl stop knstld
+cp $HOME/.knstld/data/priv_validator_state.json $HOME/.knstld/priv_validator_state.json.backup
+knstld tendermint unsafe-reset-all --home $HOME/.knstld --keep-addr-book
+SNAP_NAME=$(curl -s http://snapshots.autostake.net/darchub/ | egrep -o ">darchub.*.tar.lz4" | tr -d ">" | tail -1)
+wget -O - http://snapshots.autostake.net/darchub/$SNAP_NAME | lz4 -d | tar -xvf -
+mv $HOME/.knstld/priv_validator_state.json.backup $HOME/.knstld/data/priv_validator_state.json
+sudo systemctl restart knstld && journalctl -u knstld -f -o cat
+knstld status 2>&1 | jq .SyncInfo
 ```
 ## Faucet
 ```
@@ -118,11 +119,11 @@ https://discord.com/channels/947911971515293759/984840062871175219
 ```
 ## Create validator
 ```
-nibid tx staking create-validator \
+knstld tx staking create-validator \
 --from wallet \
 --amount 1000000unibi \
---pubkey "$(nibid tendermint show-validator)" \
---chain-id nibiru-testnet-2 \
+--pubkey "$(knstld tendermint show-validator)" \
+--chain-id darchub \
 --moniker="Name" \
 --commission-max-change-rate=0.01 \
 --commission-max-rate=1.0 \
@@ -132,7 +133,7 @@ nibid tx staking create-validator \
 --identity="" \
 --details "" \
 --security-contact="" \
---fees=5000unibi 
+--fees=2000udarc 
 -y
 
   
@@ -140,12 +141,16 @@ nibid tx staking create-validator \
   ``` 
 ##  Delegate stake
 ```
-nibid tx staking delegate $Valoper 10000000ulava --from=wallet --chain-id=nibiru-testnet-2 --gas=auto
+knstld tx staking delegate $Valoper 1000000udarc --from=wallet --chain-id=darchub --gas=auto
 ```
+##  Withdraw reward with commision
+```
+knstld tx distribution withdraw-rewards $Valoper--from=wallet --commission --chain-id=darchub --gas=auto
+
 ##  Balance
 ```
-nibid q bank balances $(nibid keys show wallet -a)
+knstld q bank balances $(knstld keys show wallet -a)
 ```
 ##  Reset
 ```
-nibid tendermint unsafe-reset-all --home $HOME/.nibid --keep-addr-book
+knstld tendermint unsafe-reset-all --home $HOME/.knstld --keep-addr-book
