@@ -64,7 +64,7 @@ Konstellation<b>
       <br><b>Humans<b>
     </td> 
       <td align="center" width="200">
-      <a href="" >
+      <a href="https://github.com/Alexmed911/Nodes-Setup-Manuals/tree/main/Jakal" >
         <img src="https://stigga.org/gallery_gen/d5be14363aea6f963c2ffcc89bd7221d_126x126.png" width="400" height="150"  />
       </a>
       <br><b>Jakal<b>
