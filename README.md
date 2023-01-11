@@ -58,7 +58,7 @@ Konstellation<b>
       <br><b>Lava<b>
     </td>
      <td align="center" width="200">
-      <a href="" >
+      <a href="https://github.com/Alexmed911/Nodes-Setup-Manuals/tree/main/Humans%20Ai" >
         <img src="https://icodrops.com/wp-content/uploads/2021/11/Humans_logo.jpeg" height="150"  />
       </a>
       <br><b>Humans<b>
