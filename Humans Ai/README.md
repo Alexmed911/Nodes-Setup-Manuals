@@ -28,43 +28,43 @@ go version
 ## Install Node
 
 ```
-git clone https://github.com/knstl/konstellation/
-cd konstellation
-git checkout v0.6.2
-make build
-cd build
-mv knstld home/go/bin/
-knstld version
-#v0.6.2
+cd $HOME
+git clone https://github.com/humansdotai/humans
+cd humans
+git checkout v1
+go build -o humansd cmd/humansd/main.go
+mv humansd /root/go/bin/
+humansd version
 ```
 ## Initialize the node
 ```
-knstld init Name --chain-id darchub
+humansd config keyring-backend test
+humansd init Name --chain-id testnet-1
 ```
 
 ## Download Genesis
 ```
-wget -O $HOME/.knstld/config/genesis.json "https://raw.githubusercontent.com/Alexmed911/Nodes-Setup-Manuals/main/Konstellation/genesis.json"
-sha256sum $HOME/.knstld/config/genesis.json
-# f0e98b0749801ba0b2ea5f1eeff72df847ec78bde9b8ff9ca114bedc8afd8763
+wget -O $HOME/.humans/config/genesis.json "https://raw.githubusercontent.com/Alexmed911/Nodes-Setup-Manuals/main/Humans Ai/genesis.json"
+sha256sum $HOME/.humans/config/genesis.json
+# f5fef1b574a07965c005b3d7ad013b27db197f57146a12c018338d7e58a4b5cd
 ```
 ## Create/recover wallet
 ```
-knstld keys add wallet
-knstld keys add wallet --recover
+humansd keys add wallet
+humansd keys add wallet --recover
 ```
 
 ## Configure Peers/Gas-prices/Indexing
 ```
-sed -i 's|^minimum-gas-prices *=.*|minimum-gas-prices = "0.001udarc"|g' $HOME/.knstld/config/app.toml
-peers="95.214.53.5:26826,5ccb0cbb4e20ff0045a12f3ad9d0710a6931a872@95.217.85.254:15612,983316b1b1f3ae6000a4ed14eb10117c8b19b17e@95.217.214.62:26656,90e379b8513f5bc2b7af0bf4fb5221f30b3ba84d@141.95.99.214:13356,0cfc4e96c882286e0714ad6a857db4d8eb1aaf3a@89.58.45.204:36656,aca4b4132fd795309485ba335475d408ebc0cda1@142.132.209.235:13356,5b9afe2bdb0f6876c196a6b10f84b2a9305926ea@135.148.169.198:13356"
-sed -i -e 's|^seeds *=.*|seeds = "'$seeds'"|; s|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.knstld/config/config.toml
+sed -i 's|^minimum-gas-prices *=.*|minimum-gas-prices = "0.001uheart"|g' $HOME/.humans/config/app.toml
+peers="2fcbf738e6054862ee14f5db926f9674bd6d081d@135.181.221.186:28656,63b22dc6595a4ad3e84826777b23a371c2bc4d6d@84.54.23.195:26656,96fc064917274a80d43985a5c3440254dcae5dc9@65.108.134.208:36656,2cc7701b7d2a9e0384ad787061edd4e5e63357d3@65.109.34.41:26656,11a72d34dec4f6f0fa2211fafba8c6581247958f@185.250.37.13:26656,a1cdecf36cd910af2535abd25972e8d51ab5b590@91.195.101.77:26656,5f8cd0ff3c46e5faa3a4f8a152ec94823452f9e8@194.163.140.190:26656,3ce506b19fff80a7e0b5f9080c5f8496dd890014@78.159.115.21:26656"
+sed -i -e 's|^seeds *=.*|seeds = "'$seeds'"|; s|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.humans/config/config.toml
 indexer="null" && \
-sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.knstld/config/config.toml
+sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.humans/config/config.toml
 ```
 ## Download Addrbook
 ```
-wget -O $HOME/.knstld/config/addrbook.json "https://raw.githubusercontent.com/Alexmed911/Nodes-Setup-Manuals/main/Konstellation/addrbook.json"
+wget -O $HOME/.humans/config/addrbook.json "https://raw.githubusercontent.com/Alexmed911/Nodes-Setup-Manuals/main/Humans Ai/addrbook.json"
 ```
 ## Pruning
 ```
@@ -72,21 +72,21 @@ pruning="custom"
 pruning_keep_recent="100"
 pruning_keep_every="0"
 pruning_interval="10"
-sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.knstld/config/config.toml
-sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.knstld/config/config.toml
-sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.knstld/config/config.toml
-sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.knstld/config/config.toml
+sed -i -e "s/^pruning *=.*/pruning = \"$pruning\"/" $HOME/.humans/config/config.toml
+sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/" $HOME/.humans/config/config.toml
+sed -i -e "s/^pruning-keep-every *=.*/pruning-keep-every = \"$pruning_keep_every\"/" $HOME/.humans/config/config.toml
+sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.humans/config/config.toml
 ```
 ## Create Service
 ```
-sudo tee /etc/systemd/system/knstld.service > /dev/null <<EOF
+sudo tee /etc/systemd/system/humansd.service > /dev/null <<EOF
 [Unit]
-Description=Knstld 
+Description=Humans
 After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$(which knstld) start
+ExecStart=$(which humansd) start
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=65535
@@ -98,28 +98,28 @@ EOF
 ## Start Node Service
 ```
 sudo systemctl daemon-reload
-sudo systemctl enable knstld
-sudo systemctl restart knstld && sudo journalctl -u knstld -f -o cat
+sudo systemctl enable humansd
+sudo systemctl restart humansd && sudo journalctl -u humansd -f -o cat
 ```
 ## Snapshot
 ```
-cd $HOME/.knstld
-sudo systemctl stop knstld
-cp $HOME/.knstld/data/priv_validator_state.json $HOME/.knstld/priv_validator_state.json.backup
-knstld tendermint unsafe-reset-all --home $HOME/.knstld --keep-addr-book
-SNAP_NAME=$(curl -s http://snapshots.autostake.net/darchub/ | egrep -o ">darchub.*.tar.lz4" | tr -d ">" | tail -1)
-wget -O - http://snapshots.autostake.net/darchub/$SNAP_NAME | lz4 -d | tar -xvf -
-mv $HOME/.knstld/priv_validator_state.json.backup $HOME/.knstld/data/priv_validator_state.json
-sudo systemctl restart knstld && journalctl -u knstld -f -o cat
-knstld status 2>&1 | jq .SyncInfo
+cd $HOME/.humans
+sudo systemctl stop humansd
+cp $HOME/.humans/data/priv_validator_state.json $HOME/.humans/priv_validator_state.json.backup
+humansd tendermint unsafe-reset-all --home $HOME/.humans --keep-addr-book
+SNAP_NAME=$(curl -s https://snapshots.bccnodes.com/testnets/humans/ | egrep -o ">testnet-1.*tar" | tail -n 1 | tr -d '>'); \
+wget -O - https://snapshots.bccnodes.com/testnets/humans/${SNAP_NAME} | tar xf -
+mv $HOME/.humans/priv_validator_state.json.backup $HOME/.humans/data/priv_validator_state.json
+sudo systemctl restart humansd && journalctl -u humansd -f -o cat
+humansd status 2>&1 | jq .SyncInfo
 ```
 ## Create validator
 ```
-knstld tx staking create-validator \
+humansd tx staking create-validator \
 --from wallet \
---amount 1000000udarc \
---pubkey "$(knstld tendermint show-validator)" \
---chain-id darchub \
+--amount 1000000uheart \
+--pubkey "$(humansd tendermint show-validator)" \
+--chain-id testnet-1 \
 --moniker="Name" \
 --commission-max-change-rate=0.01 \
 --commission-max-rate=1.0 \
@@ -129,7 +129,7 @@ knstld tx staking create-validator \
 --identity="" \
 --details "" \
 --security-contact="" \
---fees=2000udarc 
+--fees=2000uheart 
 -y
 
   
@@ -137,16 +137,16 @@ knstld tx staking create-validator \
   ``` 
 ##  Delegate stake
 ```
-knstld tx staking delegate $Valoper 1000000udarc --from=wallet --chain-id=darchub --gas=auto
+humansd tx staking delegate $Valoper 1000000uheart --from=wallet --chain-id=testnet-1 --gas=auto
 ```
 ##  Withdraw reward with commision
 ```
-knstld tx distribution withdraw-rewards $Valoper--from=wallet --commission --chain-id=darchub --gas=auto
+humansd tx distribution withdraw-rewards $Valoper--from=wallet --commission --chain-id=testnet-1 --gas=auto
 ```
 ##  Balance
 ```
-knstld q bank balances $(knstld keys show wallet -a)
+humansd q bank balances $(knstld keys show wallet -a)
 ```
 ##  Reset
 ```
-knstld tendermint unsafe-reset-all --home $HOME/.knstld --keep-addr-book
+humansd tendermint unsafe-reset-all --home $HOME/.humans --keep-addr-book
