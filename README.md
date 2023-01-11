@@ -39,10 +39,11 @@
     </tr>
  <tr>
     <td align="center" width="200">
-      <a href="" >
-        <img src="https://avatars.githubusercontent.com/u/112838174?s=200&v=4" width="400" height="150"  />
+      <a href="https://github.com/Alexmed911/Nodes-Setup-Manuals/tree/main/Konstellation" >
+        <img src="https://stigga.org/gallery_gen/afc7ef23073ccf82ab4884bdda1ae37a_140x140.png" width="400" height="150"  />
       </a>
-      <br><b>Terp<b>
+      <br><b>
+Konstellation<b>
     </td>
      <td align="center" width="200">
       <a href="https://github.com/Alexmed911/Nodes-Setup-Manuals/tree/main/Uptick" >
