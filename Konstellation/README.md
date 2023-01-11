@@ -50,14 +50,14 @@ sha256sum $HOME/.knstld/config/genesis.json
 ```
 ## Create/recover wallet
 ```
-knstld keys add key_name
-knstld keys add key_name --recover
+knstld keys add wallet
+knstld keys add wallet --recover
 ```
 
 ## Configure Peers/Gas-prices/Indexing
 ```
 sed -i 's|^minimum-gas-prices *=.*|minimum-gas-prices = "0.001udarc"|g' $HOME/.knstld/config/app.toml
-peers=""
+peers="95.214.53.5:26826,5ccb0cbb4e20ff0045a12f3ad9d0710a6931a872@95.217.85.254:15612,983316b1b1f3ae6000a4ed14eb10117c8b19b17e@95.217.214.62:26656,90e379b8513f5bc2b7af0bf4fb5221f30b3ba84d@141.95.99.214:13356,0cfc4e96c882286e0714ad6a857db4d8eb1aaf3a@89.58.45.204:36656,aca4b4132fd795309485ba335475d408ebc0cda1@142.132.209.235:13356,5b9afe2bdb0f6876c196a6b10f84b2a9305926ea@135.148.169.198:13356"
 sed -i -e 's|^seeds *=.*|seeds = "'$seeds'"|; s|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.knstld/config/config.toml
 indexer="null" && \
 sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.knstld/config/config.toml
@@ -79,14 +79,14 @@ sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $
 ```
 ## Create Service
 ```
-sudo tee /etc/systemd/system/nibid.service > /dev/null <<EOF
+sudo tee /etc/systemd/system/knstld.service > /dev/null <<EOF
 [Unit]
-Description=Nibiru
+Description=Knstld 
 After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$(which nibid) start
+ExecStart=$(which knstld) start
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=65535
@@ -112,10 +112,6 @@ wget -O - http://snapshots.autostake.net/darchub/$SNAP_NAME | lz4 -d | tar -xvf 
 mv $HOME/.knstld/priv_validator_state.json.backup $HOME/.knstld/data/priv_validator_state.json
 sudo systemctl restart knstld && journalctl -u knstld -f -o cat
 knstld status 2>&1 | jq .SyncInfo
-```
-## Faucet
-```
-https://discord.com/channels/947911971515293759/984840062871175219
 ```
 ## Create validator
 ```
