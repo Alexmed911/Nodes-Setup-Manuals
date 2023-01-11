@@ -145,7 +145,7 @@ humansd tx distribution withdraw-rewards $Valoper--from=wallet --commission --ch
 ```
 ##  Balance
 ```
-humansd q bank balances $(knstld keys show wallet -a)
+humansd q bank balances $(humansd keys show wallet -a)
 ```
 ##  Reset
 ```
