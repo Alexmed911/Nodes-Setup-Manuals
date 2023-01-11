@@ -1,0 +1,1525 @@
+{
+  "genesis_time": "2022-11-09T04:16:29.546506681Z",
+  "chain_id": "testnet-1",
+  "initial_height": "1",
+  "consensus_params": {
+    "block": {
+      "max_bytes": "22020096",
+      "max_gas": "-1",
+      "time_iota_ms": "1000"
+    },
+    "evidence": {
+      "max_age_num_blocks": "100000",
+      "max_age_duration": "172800000000000",
+      "max_bytes": "1048576"
+    },
+    "validator": {
+      "pub_key_types": [
+        "ed25519"
+      ]
+    },
+    "version": {}
+  },
+  "app_hash": "",
+  "app_state": {
+    "auth": {
+      "params": {
+        "max_memo_characters": "256",
+        "tx_sig_limit": "7",
+        "tx_size_cost_per_byte": "10",
+        "sig_verify_cost_ed25519": "590",
+        "sig_verify_cost_secp256k1": "1000"
+      },
+      "accounts": [
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "human178jjyne475dnh5jpuqfjt30ak4r64xlsxy7xsf",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "human1gpd9t6c7pefnlcazxqwwud486mum2mfwy3stsa",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "human1ka24eesawyzv0nu95rcem029hu0s8y3d8cz0tt",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "human1wy0ckwde40txlsn9q2k7tztjcdezvc0swrdmes",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "human1anqze56n765a5wygykzmww8nmmg6nrkd95xk6r",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "human14z6ewd3gmawgl7j2a947ck8ff6vg8hhr3w9qct",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "human1rnv4hw9rue04sv5354qzf5g008x2fsrge3tzm0",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "human15vurs98zxdpd5nlumnh0pxqz5lfgvq2xfv7q0a",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "human1s903wvhq6uh79m26jjk0jjnq5v3qqcpquy7p0j",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "human1gttyawc3x9l8c7esugajdt8h5z73vmj2pcyqyv",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "human19ewm65q2leevtsqvyc7jnct6uxrwr9d5k707nl",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "human1xgusxwqppv59yt5axqtcrjnr9m69afhhlmfzt7",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "human1uqy0ektgft2xaf04jpmkkm745c5wpqh5mhl5mm",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "human1z3whhgvm8anwkz7hhmkw87efzqzknz7mdrzf9s",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "human1s2p5fy0az2udl8z84tnpwh5ulv6agy9wjkk3yt",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "human1mzthlamp8m5etma6zpj7d9uyj068whk932qste",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "address": "human1ueg64s8twj7m7zq4v5trez38wq8uepzv2uvjtv",
+          "pub_key": null,
+          "account_number": "0",
+          "sequence": "0"
+        }
+      ]
+    },
+    "authz": {
+      "authorization": []
+    },
+    "bank": {
+      "params": {
+        "send_enabled": [],
+        "default_send_enabled": true
+      },
+      "balances": [
+        {
+          "address": "human1z3whhgvm8anwkz7hhmkw87efzqzknz7mdrzf9s",
+          "coins": [
+            {
+              "denom": "uheart",
+              "amount": "3500000000000"
+            }
+          ]
+        },
+        {
+          "address": "human1rnv4hw9rue04sv5354qzf5g008x2fsrge3tzm0",
+          "coins": [
+            {
+              "denom": "uheart",
+              "amount": "3500000000000"
+            }
+          ]
+        },
+        {
+          "address": "human19ewm65q2leevtsqvyc7jnct6uxrwr9d5k707nl",
+          "coins": [
+            {
+              "denom": "uheart",
+              "amount": "3500000000000"
+            }
+          ]
+        },
+        {
+          "address": "human1xgusxwqppv59yt5axqtcrjnr9m69afhhlmfzt7",
+          "coins": [
+            {
+              "denom": "uheart",
+              "amount": "3500000000000"
+            }
+          ]
+        },
+        {
+          "address": "human1gpd9t6c7pefnlcazxqwwud486mum2mfwy3stsa",
+          "coins": [
+            {
+              "denom": "uheart",
+              "amount": "3500000000000"
+            }
+          ]
+        },
+        {
+          "address": "human1gttyawc3x9l8c7esugajdt8h5z73vmj2pcyqyv",
+          "coins": [
+            {
+              "denom": "uheart",
+              "amount": "3500000000000"
+            }
+          ]
+        },
+        {
+          "address": "human1wy0ckwde40txlsn9q2k7tztjcdezvc0swrdmes",
+          "coins": [
+            {
+              "denom": "uheart",
+              "amount": "3500000000000"
+            }
+          ]
+        },
+        {
+          "address": "human1s903wvhq6uh79m26jjk0jjnq5v3qqcpquy7p0j",
+          "coins": [
+            {
+              "denom": "uheart",
+              "amount": "3500000000000"
+            }
+          ]
+        },
+        {
+          "address": "human1s2p5fy0az2udl8z84tnpwh5ulv6agy9wjkk3yt",
+          "coins": [
+            {
+              "denom": "uheart",
+              "amount": "3500000000000"
+            }
+          ]
+        },
+        {
+          "address": "human15vurs98zxdpd5nlumnh0pxqz5lfgvq2xfv7q0a",
+          "coins": [
+            {
+              "denom": "uheart",
+              "amount": "3500000000000"
+            }
+          ]
+        },
+        {
+          "address": "human14z6ewd3gmawgl7j2a947ck8ff6vg8hhr3w9qct",
+          "coins": [
+            {
+              "denom": "uheart",
+              "amount": "3500000000000"
+            }
+          ]
+        },
+        {
+          "address": "human1ka24eesawyzv0nu95rcem029hu0s8y3d8cz0tt",
+          "coins": [
+            {
+              "denom": "uheart",
+              "amount": "3500000000000"
+            }
+          ]
+        },
+        {
+          "address": "human1mzthlamp8m5etma6zpj7d9uyj068whk932qste",
+          "coins": [
+            {
+              "denom": "uheart",
+              "amount": "3500000000000"
+            }
+          ]
+        },
+        {
+          "address": "human1uqy0ektgft2xaf04jpmkkm745c5wpqh5mhl5mm",
+          "coins": [
+            {
+              "denom": "uheart",
+              "amount": "3500000000000"
+            }
+          ]
+        },
+        {
+          "address": "human1ueg64s8twj7m7zq4v5trez38wq8uepzv2uvjtv",
+          "coins": [
+            {
+              "denom": "uheart",
+              "amount": "3500000000000"
+            }
+          ]
+        },
+        {
+          "address": "human1anqze56n765a5wygykzmww8nmmg6nrkd95xk6r",
+          "coins": [
+            {
+              "denom": "uheart",
+              "amount": "3500000000000"
+            }
+          ]
+        },
+        {
+          "address": "human178jjyne475dnh5jpuqfjt30ak4r64xlsxy7xsf",
+          "coins": [
+            {
+              "denom": "uheart",
+              "amount": "1000000000000"
+            }
+          ]
+        }
+      ],
+      "supply": [],
+      "denom_metadata": [
+        {
+          "description": "The gas token of AI",
+          "denom_units": [
+            {
+              "denom": "uheart",
+              "exponent": 0,
+              "aliases": [
+                "milliheart"
+              ]
+            },
+            {
+              "denom": "mheart",
+              "exponent": 3,
+              "aliases": [
+                "microheart"
+              ]
+            },
+            {
+              "denom": "heart",
+              "exponent": 6,
+              "aliases": []
+            }
+          ],
+          "base": "uheart",
+          "display": "heart",
+          "name": "HeartToken",
+          "symbol": "HEART",
+          "uri": "",
+          "uri_hash": ""
+        }
+      ]
+    },
+    "capability": {
+      "index": "1",
+      "owners": []
+    },
+    "crisis": {
+      "constant_fee": {
+        "amount": "1000",
+        "denom": "stake"
+      }
+    },
+    "distribution": {
+      "delegator_starting_infos": [],
+      "delegator_withdraw_infos": [],
+      "fee_pool": {
+        "community_pool": []
+      },
+      "outstanding_rewards": [],
+      "params": {
+        "base_proposer_reward": "0.010000000000000000",
+        "bonus_proposer_reward": "0.040000000000000000",
+        "community_tax": "0.020000000000000000",
+        "withdraw_addr_enabled": true
+      },
+      "previous_proposer": "",
+      "validator_accumulated_commissions": [],
+      "validator_current_rewards": [],
+      "validator_historical_rewards": [],
+      "validator_slash_events": []
+    },
+    "evidence": {
+      "evidence": []
+    },
+    "feegrant": {
+      "allowances": []
+    },
+    "genutil": {
+      "gen_txs": [
+        {
+          "body": {
+            "messages": [
+              {
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "description": {
+                  "moniker": "Humans Foundation Node #9",
+                  "identity": "",
+                  "website": "https://humans.zone",
+                  "security_contact": "Vali Malinoiu <vali@humans.ai>",
+                  "details": "This node is a part of the humans.ai foundation and it's insuring the testnet integrity"
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1",
+                "delegator_address": "human19ewm65q2leevtsqvyc7jnct6uxrwr9d5k707nl",
+                "validator_address": "humanvaloper19ewm65q2leevtsqvyc7jnct6uxrwr9d56d43c6",
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "RA80SbKSq8CCkn0OLfT79AJLh0oME430oyvNY22IbyY="
+                },
+                "value": {
+                  "denom": "uheart",
+                  "amount": "2500000000000"
+                }
+              }
+            ],
+            "memo": "0794ff9952e1b6c6ead96359fecc52932e115eab@45.136.40.15:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/cosmos.crypto.secp256k1.PubKey",
+                  "key": "A+719YZnqdhkbdrpoEjT74QOH8s2REnR0ny9gtfBns/C"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "HvuZSl3cRwXt4GOI6AE6p9G2/T6YkmuBQ1LEGFTdSqAFaBnqfEadyAAGEyd5Pe8gn73RJfkoK0fC6ud20ldDNg=="
+          ]
+        },
+        {
+          "body": {
+            "messages": [
+              {
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "description": {
+                  "moniker": "Humans Foundation Node #13",
+                  "identity": "",
+                  "website": "https://humans.zone",
+                  "security_contact": "Vali Malinoiu <vali@humans.ai>",
+                  "details": "This node is a part of the humans.ai foundation and it's insuring the testnet integrity"
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1",
+                "delegator_address": "human1s2p5fy0az2udl8z84tnpwh5ulv6agy9wjkk3yt",
+                "validator_address": "humanvaloper1s2p5fy0az2udl8z84tnpwh5ulv6agy9w79v70w",
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "Oe2pqieK54oOB5cFSwpxMRjlo511eG3RQ0gynh57FiI="
+                },
+                "value": {
+                  "denom": "uheart",
+                  "amount": "2500000000000"
+                }
+              }
+            ],
+            "memo": "1802da0f18dcf6752ed789d81b4f5e003f80719b@45.136.40.19:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/cosmos.crypto.secp256k1.PubKey",
+                  "key": "AqJxedHc5QgKS6qkXvYp3pgpik3HiFF3OcbfglmDiC13"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "TMO/zX3jE1RjcF8D3ResJlvOjvaYg2RxiBN4vnLFblFwycZG4ZZjKvgFVaepjT8uXFUhUlRwJZlYzYNRdzugiw=="
+          ]
+        },
+        {
+          "body": {
+            "messages": [
+              {
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "description": {
+                  "moniker": "Humans Foundation Node #14",
+                  "identity": "",
+                  "website": "https://humans.zone",
+                  "security_contact": "Vali Malinoiu <vali@humans.ai>",
+                  "details": "This node is a part of the humans.ai foundation and it's insuring the testnet integrity"
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1",
+                "delegator_address": "human1mzthlamp8m5etma6zpj7d9uyj068whk932qste",
+                "validator_address": "humanvaloper1mzthlamp8m5etma6zpj7d9uyj068whk9ae6lqu",
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "dso6YslifVppI7TwVMMfz3inf2ijniq21bGFJds4k7c="
+                },
+                "value": {
+                  "denom": "uheart",
+                  "amount": "2500000000000"
+                }
+              }
+            ],
+            "memo": "1a06290cf2da4a2cf513036180d250035266b109@45.136.40.20:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/cosmos.crypto.secp256k1.PubKey",
+                  "key": "A524rGZCr3apTkYgwSMALDoWXixT8Ne83uj2Ro6iDGUW"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "Dwdjm0Rxt5mKqvJffNC0GBk4BzZl4WLsReVZfV4teN8mvk3y/2tWm7gH0kjXOeaWXjCdcRSW7Q9PypqOYR6ARg=="
+          ]
+        },
+        {
+          "body": {
+            "messages": [
+              {
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "description": {
+                  "moniker": "Humans Foundation Node #2",
+                  "identity": "",
+                  "website": "https://humans.zone",
+                  "security_contact": "Vali Malinoiu <vali@humans.ai>",
+                  "details": "This node is a part of the humans.ai foundation and it's insuring the testnet integrity"
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1",
+                "delegator_address": "human1wy0ckwde40txlsn9q2k7tztjcdezvc0swrdmes",
+                "validator_address": "humanvaloper1wy0ckwde40txlsn9q2k7tztjcdezvc0szsh5j4",
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "UkUj+T5ah85T2e1dg4CVRp2S6qlhKf6cYMfBOb1Neyc="
+                },
+                "value": {
+                  "denom": "uheart",
+                  "amount": "2500000000000"
+                }
+              }
+            ],
+            "memo": "1bc08140bfb66b95602de68921ff276da0f58a10@45.136.40.8:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/cosmos.crypto.secp256k1.PubKey",
+                  "key": "AxYJoe94N4cysnMPfK5UTs26tm0pTt255B8yqfK6xJ5Y"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "TqqeuBDdU6uWji2y0Z5fRYoO0afhQPwEe42zOTVbngxD51G/6FV6Whgm7VekHCBz8b79DtXUR9KRu5WYN2b1Mg=="
+          ]
+        },
+        {
+          "body": {
+            "messages": [
+              {
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "description": {
+                  "moniker": "Humans Foundation Node #0",
+                  "identity": "",
+                  "website": "https://humans.zone",
+                  "security_contact": "Vali Malinoiu <vali@humans.ai>",
+                  "details": "This node is a part of the humans.ai foundation and it's insuring the testnet integrity"
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1",
+                "delegator_address": "human1gpd9t6c7pefnlcazxqwwud486mum2mfwy3stsa",
+                "validator_address": "humanvaloper1gpd9t6c7pefnlcazxqwwud486mum2mfwgz2ymc",
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "5g50I8jJ2s5lQrmpgUhxRMvjxaUXMwc2QhEelekJUyE="
+                },
+                "value": {
+                  "denom": "uheart",
+                  "amount": "2500000000000"
+                }
+              }
+            ],
+            "memo": "1df6735ac39c8f07ae5db31923a0d38ec6d1372b@45.136.40.6:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/cosmos.crypto.secp256k1.PubKey",
+                  "key": "AlC2+arBZjGzcoRMwAONG8TaMiDdvtUUU0m0ZphV0iZA"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "sh7u0iHXrO1iw40bk/dtasRoeb9HWx65ToTZIDz3X2Mc/mJmeTXjrljGg2QVFZp6xjrcJnLGqxGQwDwt9riVvA=="
+          ]
+        },
+        {
+          "body": {
+            "messages": [
+              {
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "description": {
+                  "moniker": "Humans Foundation Node #6",
+                  "identity": "",
+                  "website": "https://humans.zone",
+                  "security_contact": "Vali Malinoiu <vali@humans.ai>",
+                  "details": "This node is a part of the humans.ai foundation and it's insuring the testnet integrity"
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1",
+                "delegator_address": "human15vurs98zxdpd5nlumnh0pxqz5lfgvq2xfv7q0a",
+                "validator_address": "humanvaloper15vurs98zxdpd5nlumnh0pxqz5lfgvq2x9ly0yc",
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "1QMOMsumG3t7tSp48iF7sLxf703+6s59D+p3ee13CLI="
+                },
+                "value": {
+                  "denom": "uheart",
+                  "amount": "2500000000000"
+                }
+              }
+            ],
+            "memo": "4de8c8acccecc8e0bed4a218c2ef235ab68b5cf2@45.136.40.12:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/cosmos.crypto.secp256k1.PubKey",
+                  "key": "AjKF0pLfm+b1lz59+pV70d3HuGaPiDTk7abfUaqqiZ4e"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "E0opbEHVNj/9tPooMIiWLdoli3Y/7e/Hgk3SnDS099VMK7/rD6jeLgS/kKZCpEmcqp0K3StIE7vr6Wpvj51I8Q=="
+          ]
+        },
+        {
+          "body": {
+            "messages": [
+              {
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "description": {
+                  "moniker": "Humans Foundation Node #8",
+                  "identity": "",
+                  "website": "https://humans.zone",
+                  "security_contact": "Vali Malinoiu <vali@humans.ai>",
+                  "details": "This node is a part of the humans.ai foundation and it's insuring the testnet integrity"
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1",
+                "delegator_address": "human1gttyawc3x9l8c7esugajdt8h5z73vmj2pcyqyv",
+                "validator_address": "humanvaloper1gttyawc3x9l8c7esugajdt8h5z73vmj2dt700f",
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "YLyh/zfLzcsdyJhCvOGvTGHjMxU3/pdTBcLdbWVy0M0="
+                },
+                "value": {
+                  "denom": "uheart",
+                  "amount": "2500000000000"
+                }
+              }
+            ],
+            "memo": "5e9a778625c2d4f2ffa0691f50342a58e8b9bfdd@45.136.40.14:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/cosmos.crypto.secp256k1.PubKey",
+                  "key": "Ay1SKa5LHwbUeM+f+XH/0eUywTh69g+WYnrt+xGYGlfn"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "KaqkxmTPd1ZSNDANikkQmRDEcwzAy32+WsiGuO3L6x40MITXozw35GW8bW2596lcNpJD/spfL68kmLES7rAXqw=="
+          ]
+        },
+        {
+          "body": {
+            "messages": [
+              {
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "description": {
+                  "moniker": "Humans Foundation Node #15",
+                  "identity": "",
+                  "website": "https://humans.zone",
+                  "security_contact": "Vali Malinoiu <vali@humans.ai>",
+                  "details": "This node is a part of the humans.ai foundation and it's insuring the testnet integrity"
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1",
+                "delegator_address": "human1ueg64s8twj7m7zq4v5trez38wq8uepzv2uvjtv",
+                "validator_address": "humanvaloper1ueg64s8twj7m7zq4v5trez38wq8uepzvx0kaqf",
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "A+DM5fm/zQPVL3lv3u/ybX5nDtuSR1Ca16IWJ125hMU="
+                },
+                "value": {
+                  "denom": "uheart",
+                  "amount": "2500000000000"
+                }
+              }
+            ],
+            "memo": "6e7fb6dff31da195d4fd92cdfbf049fc0ddc8403@45.136.40.21:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/cosmos.crypto.secp256k1.PubKey",
+                  "key": "A5DrzQTa7HkEhiyTOy61dTfPAcpHRpi2GMbZIsiSoTdq"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "RSorh4Os9MVnPUVjIwltcp4borfk8PI28CpLPr888c8gOlsf6FIZ3CdH7ul/Na4SA7Zr7YHpQTOQtoMWV6WAng=="
+          ]
+        },
+        {
+          "body": {
+            "messages": [
+              {
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "description": {
+                  "moniker": "Humans Foundation Node #12",
+                  "identity": "",
+                  "website": "https://humans.zone",
+                  "security_contact": "Vali Malinoiu <vali@humans.ai>",
+                  "details": "This node is a part of the humans.ai foundation and it's insuring the testnet integrity"
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1",
+                "delegator_address": "human1z3whhgvm8anwkz7hhmkw87efzqzknz7mdrzf9s",
+                "validator_address": "humanvaloper1z3whhgvm8anwkz7hhmkw87efzqzknz7mpscxw4",
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "YfbuMVbl5vJ8nlJeIj/g2RgVejGF4PxucQ5iClMGX4E="
+                },
+                "value": {
+                  "denom": "uheart",
+                  "amount": "2500000000000"
+                }
+              }
+            ],
+            "memo": "6e84cde074d4af8a9df59d125db3bf8d6722a787@45.136.40.18:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/cosmos.crypto.secp256k1.PubKey",
+                  "key": "A+Wcx8GcGLBGVMc4cix+Yd/N8lMBOcP2Id4X96+TRtfG"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "YszlbDbAYzXODuZaheEswv2ALvCw3YoQ25oZ8RucqRBgJgX7NRl/bfhhqlQT7Dv99rKffAsY8bHgoQRvU2cjBQ=="
+          ]
+        },
+        {
+          "body": {
+            "messages": [
+              {
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "description": {
+                  "moniker": "Humans Foundation Node #10",
+                  "identity": "",
+                  "website": "https://humans.zone",
+                  "security_contact": "Vali Malinoiu <vali@humans.ai>",
+                  "details": "This node is a part of the humans.ai foundation and it's insuring the testnet integrity"
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1",
+                "delegator_address": "human1xgusxwqppv59yt5axqtcrjnr9m69afhhlmfzt7",
+                "validator_address": "humanvaloper1xgusxwqppv59yt5axqtcrjnr9m69afhhngndqm",
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "6A2YamhyFgwJnIdbLTDzdLt+Xe5HsIfTvJd4m7VvFSY="
+                },
+                "value": {
+                  "denom": "uheart",
+                  "amount": "2500000000000"
+                }
+              }
+            ],
+            "memo": "9726b7ba17ee87006055a9b7a45293bfd7b7f0fc@45.136.40.16:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/cosmos.crypto.secp256k1.PubKey",
+                  "key": "Akj3kkWC5r2nOqhh3x2LeuuoiI/nHuMay/7WTLb+8siT"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "RMvNh2xp9cbKR6QKLsEgQ3QQUK9hLubaVefPeXN8LJF2I0FQORdTisu9usZl7EsHFG/FykdpcSEb+Fbir+jECA=="
+          ]
+        },
+        {
+          "body": {
+            "messages": [
+              {
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "description": {
+                  "moniker": "Humans Foundation Node #1",
+                  "identity": "",
+                  "website": "https://humans.zone",
+                  "security_contact": "Vali Malinoiu <vali@humans.ai>",
+                  "details": "This node is a part of the humans.ai foundation and it's insuring the testnet integrity"
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1",
+                "delegator_address": "human1ka24eesawyzv0nu95rcem029hu0s8y3d8cz0tt",
+                "validator_address": "humanvaloper1ka24eesawyzv0nu95rcem029hu0s8y3dttcqqw",
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "vhHi2uKy+xfx4qWYt/pLZUcUHp7eDTRhK/lENSazX2k="
+                },
+                "value": {
+                  "denom": "uheart",
+                  "amount": "2500000000000"
+                }
+              }
+            ],
+            "memo": "9fff9390d54c9b967116dcd4ea4aeb36f6c44417@45.136.40.7:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/cosmos.crypto.secp256k1.PubKey",
+                  "key": "AtL89zCRNvEF5O3ZclvQ65LrVVOAi/yhW0tdiHc/G7ez"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "e85kqquyPvJ33/shoTN15HVfZmFbZ3uAKbHou7ZULi5W2d4adpjHM/WhFkw+9w24FEHE21P3Zk/t8oyyv3bFqQ=="
+          ]
+        },
+        {
+          "body": {
+            "messages": [
+              {
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "description": {
+                  "moniker": "Humans Foundation Node #5",
+                  "identity": "",
+                  "website": "https://humans.zone",
+                  "security_contact": "Vali Malinoiu <vali@humans.ai>",
+                  "details": "This node is a part of the humans.ai foundation and it's insuring the testnet integrity"
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1",
+                "delegator_address": "human1rnv4hw9rue04sv5354qzf5g008x2fsrge3tzm0",
+                "validator_address": "humanvaloper1rnv4hw9rue04sv5354qzf5g008x2fsrg4z3ds2",
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "tVwrh2CdcKb6VwQ46I50h5V9ybUMuFUXYLgON99vqLc="
+                },
+                "value": {
+                  "denom": "uheart",
+                  "amount": "2500000000000"
+                }
+              }
+            ],
+            "memo": "acfc0f6155dff8d9c9a4b3769771f107744e0c50@45.136.40.11:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/cosmos.crypto.secp256k1.PubKey",
+                  "key": "Agv4+T3RkWcB+xM6RYKii9QDSikPYsWcorB9mit/MMBz"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "7JBCuNPe1dyfP/0MLgoSe1xqmWDtPkHP/BnNnowJKugzpOvqCMD+TcyGMSi4DaMDVACNcVDHIiTbLQ20DBGbVA=="
+          ]
+        },
+        {
+          "body": {
+            "messages": [
+              {
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "description": {
+                  "moniker": "Humans Foundation Node #4",
+                  "identity": "",
+                  "website": "https://humans.zone",
+                  "security_contact": "Vali Malinoiu <vali@humans.ai>",
+                  "details": "This node is a part of the humans.ai foundation and it's insuring the testnet integrity"
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1",
+                "delegator_address": "human14z6ewd3gmawgl7j2a947ck8ff6vg8hhr3w9qct",
+                "validator_address": "humanvaloper14z6ewd3gmawgl7j2a947ck8ff6vg8hhraal0nw",
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "FDl7MqgeZ+IxSDl6MWfJGRIoJLNEbSpR9FgPC0+V3CQ="
+                },
+                "value": {
+                  "denom": "uheart",
+                  "amount": "2500000000000"
+                }
+              }
+            ],
+            "memo": "e12d777de67ae964c0132c293f6d65a4d7b65bf8@45.136.40.10:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/cosmos.crypto.secp256k1.PubKey",
+                  "key": "A+NnEK7ygdsGNEtVk3UU6GVMFqr6XSYn8fikTHP7fAPU"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "UN8MtuJ5Gub3KhOnxPPgB2AWtOxgy4OOErnhQf269qgLW2NEcBHS/fuPnMq95qLhSpYjbyqrcE9n1II9XMg0/A=="
+          ]
+        },
+        {
+          "body": {
+            "messages": [
+              {
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "description": {
+                  "moniker": "Humans Foundation Node #11",
+                  "identity": "",
+                  "website": "https://humans.zone",
+                  "security_contact": "Vali Malinoiu <vali@humans.ai>",
+                  "details": "This node is a part of the humans.ai foundation and it's insuring the testnet integrity"
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1",
+                "delegator_address": "human1uqy0ektgft2xaf04jpmkkm745c5wpqh5mhl5mm",
+                "validator_address": "humanvaloper1uqy0ektgft2xaf04jpmkkm745c5wpqh5hy9ms7",
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "8zS9lYhL+MghOksWa6IMUZ7/BnUc3HtP/K1A2+VzJLs="
+                },
+                "value": {
+                  "denom": "uheart",
+                  "amount": "2500000000000"
+                }
+              }
+            ],
+            "memo": "e9ba9556b7076a679ea117b44ef18eeb59dc8f61@45.136.40.17:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/cosmos.crypto.secp256k1.PubKey",
+                  "key": "A8dvXP2OaDbLxVlmepKOdg4iZtHoavHzKKbQqnihIrJh"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "+GsTinauvR/3KZhjt8QOwq9FJczNxk+dRBgWLoheNHo6+wN0/eRPNabUpmJwyNMX3ImgO2BfeiIjpBfT13gkUQ=="
+          ]
+        },
+        {
+          "body": {
+            "messages": [
+              {
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "description": {
+                  "moniker": "Humans Foundation Node #7",
+                  "identity": "",
+                  "website": "https://humans.zone",
+                  "security_contact": "Vali Malinoiu <vali@humans.ai>",
+                  "details": "This node is a part of the humans.ai foundation and it's insuring the testnet integrity"
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1",
+                "delegator_address": "human1s903wvhq6uh79m26jjk0jjnq5v3qqcpquy7p0j",
+                "validator_address": "humanvaloper1s903wvhq6uh79m26jjk0jjnq5v3qqcpqshywyh",
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "8W9Y/2ORkGOdraEWQFPoQjMaF3YCz9si9EUa689LErM="
+                },
+                "value": {
+                  "denom": "uheart",
+                  "amount": "2500000000000"
+                }
+              }
+            ],
+            "memo": "eda3e2255f3c88f97673d61d6f37b243de34e9d9@45.136.40.13:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/cosmos.crypto.secp256k1.PubKey",
+                  "key": "A6g4N4lmDaS5YqRvFkExHNvwzvc7jH+9wbzauzni2g8c"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "51vEdVPTFV0papsv0dplxTjhq3DBel8kR9+/2S39YIdUHiiv6xoVCWUNfQ8kcOu5eUKOjmh0KsQLLaSrjVU+KA=="
+          ]
+        },
+        {
+          "body": {
+            "messages": [
+              {
+                "@type": "/cosmos.staking.v1beta1.MsgCreateValidator",
+                "description": {
+                  "moniker": "Humans Foundation Node #3",
+                  "identity": "",
+                  "website": "https://humans.zone",
+                  "security_contact": "Vali Malinoiu <vali@humans.ai>",
+                  "details": "This node is a part of the humans.ai foundation and it's insuring the testnet integrity"
+                },
+                "commission": {
+                  "rate": "0.100000000000000000",
+                  "max_rate": "0.200000000000000000",
+                  "max_change_rate": "0.010000000000000000"
+                },
+                "min_self_delegation": "1",
+                "delegator_address": "human1anqze56n765a5wygykzmww8nmmg6nrkd95xk6r",
+                "validator_address": "humanvaloper1anqze56n765a5wygykzmww8nmmg6nrkdf8ue3x",
+                "pubkey": {
+                  "@type": "/cosmos.crypto.ed25519.PubKey",
+                  "key": "XSdZFQ2/sbcIJu5hPja8uEYZ0++5goFMDvcnWJOp/Iw="
+                },
+                "value": {
+                  "denom": "uheart",
+                  "amount": "2500000000000"
+                }
+              }
+            ],
+            "memo": "f8436d95eb7e99da15242c6d02f112043f4a6a8d@45.136.40.9:26656",
+            "timeout_height": "0",
+            "extension_options": [],
+            "non_critical_extension_options": []
+          },
+          "auth_info": {
+            "signer_infos": [
+              {
+                "public_key": {
+                  "@type": "/cosmos.crypto.secp256k1.PubKey",
+                  "key": "AqwgHCVMDkWfKWbGESNssVITUMSTQuxRMrxpEabSe621"
+                },
+                "mode_info": {
+                  "single": {
+                    "mode": "SIGN_MODE_DIRECT"
+                  }
+                },
+                "sequence": "0"
+              }
+            ],
+            "fee": {
+              "amount": [],
+              "gas_limit": "200000",
+              "payer": "",
+              "granter": ""
+            },
+            "tip": null
+          },
+          "signatures": [
+            "uOtDWFehWdlezAovm9JQWr+iTR92hcqP6zlZJeNJEUE1HohTcx8/isFTjRY2AkIlRPYdNMyNP9eUSdcxqKg9Ww=="
+          ]
+        }
+      ]
+    },
+    "gov": {
+      "deposit_params": {
+        "max_deposit_period": "48h",
+        "min_deposit": [
+          {
+            "amount": "2500000000000",
+            "denom": "uheart"
+          }
+        ]
+      },
+      "deposits": null,
+      "proposals": null,
+      "starting_proposal_id": "1",
+      "tally_params": {
+        "quorum": "0.33",
+        "threshold": "0.5",
+        "veto_threshold": "0.334000000000000000"
+      },
+      "votes": null,
+      "voting_params": {
+        "voting_period": "72h"
+      }
+    },
+    "group": {
+      "group_members": [],
+      "group_policies": [],
+      "group_policy_seq": "0",
+      "group_seq": "0",
+      "groups": [],
+      "proposal_seq": "0",
+      "proposals": [],
+      "votes": []
+    },
+    "humans": {
+      "params": {}
+    },
+    "ibc": {
+      "channel_genesis": {
+        "ack_sequences": [],
+        "acknowledgements": [],
+        "channels": [],
+        "commitments": [],
+        "next_channel_sequence": "0",
+        "receipts": [],
+        "recv_sequences": [],
+        "send_sequences": []
+      },
+      "client_genesis": {
+        "clients": [],
+        "clients_consensus": [],
+        "clients_metadata": [],
+        "create_localhost": false,
+        "next_client_sequence": "0",
+        "params": {
+          "allowed_clients": [
+            "06-solomachine",
+            "07-tendermint"
+          ]
+        }
+      },
+      "connection_genesis": {
+        "client_connection_paths": [],
+        "connections": [],
+        "next_connection_sequence": "0",
+        "params": {
+          "max_expected_time_per_block": "30000000000"
+        }
+      }
+    },
+    "interchainaccounts": {
+      "controller_genesis_state": {
+        "active_channels": [],
+        "interchain_accounts": [],
+        "params": {
+          "controller_enabled": true
+        },
+        "ports": []
+      },
+      "host_genesis_state": {
+        "active_channels": [],
+        "interchain_accounts": [],
+        "params": {
+          "allow_messages": [],
+          "host_enabled": true
+        },
+        "port": "icahost"
+      }
+    },
+    "mint": {
+      "minter": {
+        "annual_provisions": "0.000000000000000000",
+        "inflation": "0.070000000000000000"
+      },
+      "params": {
+        "blocks_per_year": "6311520",
+        "goal_bonded": "0.670000000000000000",
+        "inflation_max": "0.115000000000000000",
+        "inflation_min": "0.070000000000000000",
+        "inflation_rate_change": "0.5",
+        "mint_denom": "uheart"
+      }
+    },
+    "params": null,
+    "slashing": {
+      "missed_blocks": [],
+      "params": {
+        "downtime_jail_duration": "10m",
+        "min_signed_per_window": "0.050000000000000000",
+        "signed_blocks_window": "30000",
+        "slash_fraction_double_sign": "0.050000000000000000",
+        "slash_fraction_downtime": "0.000100000000000000"
+      },
+      "signing_infos": []
+    },
+    "staking": {
+      "delegations": [],
+      "exported": false,
+      "last_total_power": "0",
+      "last_validator_powers": [],
+      "params": {
+        "bond_denom": "uheart",
+        "historical_entries": 10000,
+        "max_entries": 7,
+        "max_validators": 50,
+        "min_commission_rate": "0.000000000000000000",
+        "unbonding_time": "336h"
+      },
+      "redelegations": [],
+      "unbonding_delegations": [],
+      "validators": []
+    },
+    "transfer": {
+      "denom_traces": [],
+      "params": {
+        "receive_enabled": true,
+        "send_enabled": true
+      },
+      "port_id": "transfer"
+    },
+    "upgrade": {},
+    "vesting": {}
+  }
+}
