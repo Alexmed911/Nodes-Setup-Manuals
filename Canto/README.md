@@ -38,7 +38,7 @@ cantod version
 ## Initialize the node
 ```
 cantod config keyring-backend test
-cantod init Name --chain-id jackal-1
+cantod init Name --chain-id canto_7700-1
 ```
 
 ## Download Genesis
