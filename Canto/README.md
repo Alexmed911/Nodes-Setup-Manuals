@@ -102,7 +102,7 @@ sudo systemctl restart cantod && sudo journalctl -u cantod -f -o cat
 ```
 ## State-Sync
 ```
-cp $HOME/.canine/data/priv_validator_state.json $HOME/.canine/priv_validator_state.json.backup
+cp $HOME/.cantod/data/priv_validator_state.json $HOME/.cantod/priv_validator_state.json.backup
 cantod tendermint unsafe-reset-all --home $HOME/.cantod --keep-addr-book
 SNAP_RPC="https://canto-rpc.polkachu.com:443"
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
@@ -115,7 +115,7 @@ s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
 s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.cantod/config/config.toml
 
-mv $HOME/.canine/priv_validator_state.json.backup $HOME/.canine/data/priv_validator_state.json
+mv $HOME/.cantod/priv_validator_state.json.backup $HOME/.cantod/data/priv_validator_state.json
 sudo systemctl restart cantod && journalctl -u cantod -f -o cat
 ```
 ## Create validator
