@@ -113,11 +113,6 @@ mv $HOME/.defund/priv_validator_state.json.backup $HOME/.defund/data/priv_valida
 sudo systemctl restart defundd && journalctl -u defundd -f -o cat
 defundd status 2>&1 | jq .SyncInfo
 ```
-## Sync
-```
-defundd status 2>&1 | jq .SyncInfo
-defundd status 2>&1 | jq .NodeInfo
-```
 ## Create validator
 ```
 defundd tx staking create-validator  \      
