@@ -1,6 +1,6 @@
 # Defund Testnet (defund-private-4)
 
-![image](https://avatars.githubusercontent.com/u/95717440?s=200&v=4)
+![image](https://miro.medium.com/max/750/1*ARSUtObxo8xSh2kReWgv2Q.webp)
 
 ## <a href="https://defund.app/">🌎 Website </a>
 ## <a href="https://discord.gg/bWZqS6xBcK">💎 Discord </a>
