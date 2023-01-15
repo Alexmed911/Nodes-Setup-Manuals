@@ -107,8 +107,8 @@ cd $HOME/.defund
 sudo systemctl stop defundd
 cp $HOME/.defund/data/priv_validator_state.json $HOME/.defund/priv_validator_state.json.backup
 defundd tendermint unsafe-reset-all --home $HOME/.defund --keep-addr-book
-SNAP_NAME=$(curl -s http://snapshots.autostake.net/defund-private-3/ | egrep -o ">defund-private-3.*.tar.lz4" | tr -d ">" | tail -1)
-wget -O - http://snapshots.autostake.net/defund-private-3/$SNAP_NAME | lz4 -d | tar -xvf -
+SNAP_NAME=$(curl -s http://snapshots.autostake.net/defund-private-4/ | egrep -o ">defund-private-3.*.tar.lz4" | tr -d ">" | tail -1)
+wget -O - http://snapshots.autostake.net/defund-private-4/$SNAP_NAME | lz4 -d | tar -xvf -
 mv $HOME/.defund/priv_validator_state.json.backup $HOME/.defund/data/priv_validator_state.json
 sudo systemctl restart defundd && journalctl -u defundd -f -o cat
 defundd status 2>&1 | jq .SyncInfo
