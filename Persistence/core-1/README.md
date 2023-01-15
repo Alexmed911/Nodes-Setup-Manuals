@@ -34,7 +34,7 @@ cd persistenceCore
 git checkout v6.1.0
 make install
 persistenceCore version         
-#v6.0.0
+#v6.0.1
 ```
 ## 11.01.23 Update v6
 ```
