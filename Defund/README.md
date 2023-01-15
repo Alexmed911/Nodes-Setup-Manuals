@@ -1,4 +1,4 @@
-# Defund Testnet (defund-private-3)
+# Defund Testnet (defund-private-4)
 
 ![image](https://avatars.githubusercontent.com/u/95717440?s=200&v=4)
 
@@ -25,33 +25,32 @@ source $HOME/.bash_profile && \
 go version    
 #1.19.3
 ```
-## Install Node
+## Install Node 15.01.23
 
 ```
 cd $HOME
 rm -rf defund
 git clone https://github.com/defund-labs/defund.git
 cd defund
-git checkout v0.2.1
+git checkout v0.2.2
 make install
 defundd version         
-#v0.2.1
+#v0.2.2
 ```
 
 ## Initialize the node
 ```
 defundd config keyring-backend test
-defundd config chain-id defund-private-3
-defundd init $Moniker-name --chain-id defund-private-3
+defundd config chain-id defund-private-4
+defundd init $Moniker-name --chain-id defund-private-4
 ```
 
 ## Download Genesis
 ```
-wget -O defund-private-3-gensis.tar.gz https://github.com/defund-labs/testnet/raw/main/defund-private-3/defund-private-3-gensis.tar.gz
-sudo tar -xvzf defund-private-3-gensis.tar.gz -C $HOME/.defund/config
-rm defund-private-3-gensis.tar.gz
+cd $HOME/.defund/config
+curl -s https://raw.githubusercontent.com/defund-labs/testnet/main/defund-private-4/genesis.json > ~/.defund/config/genesis.json
 sha256sum $HOME/.defund/config/genesis.json
-# 1a10121467576ab6f633a14f82d98f0c39ab7949102a77ab6478b2b2110109e3
+# db13a33fbb4048c8701294de79a42a2b5dff599d653c0ee110390783c833208b
 ```
 ## Create/recover wallet
 ```
@@ -62,7 +61,7 @@ defundd keys add wallet --recover
 ## Configure Peers/Gas-prices
 ```
 sed -i 's|^minimum-gas-prices *=.*|minimum-gas-prices = "0.0001ufetf"|g' $HOME/.defund/config/app.toml
-peers="263616dba779061a18ded71dddb92928ea27a4ba@43.154.83.15:26656,e108c39c307864acbeceda3f4b2c77c99ec1bddd@185.16.38.136:36656,e4677ff91a0bfec8949de0c2d531b4bbffcb0ceb@92.119.112.231:36656,85b021ed71173a0825736891b06592a8eee7b4ca@43.156.112.45:26656,bdcaabb2384b1a59d12fbd57dd1d74a58edaf1b2@175.24.183.235:26656,45b50b7ad8df4d2661fc6f510bd9d490b5ec253d@43.134.202.178:26656,43452645f84db6827452f32869ddf3ce585937c5@43.156.111.103:26656,257de7d6825037b6c6de16aac4ebb9efd641b8a6@43.156.111.241:26656,58aef46a0286a6d50a7f687bfc35d62f85feec10@107.174.63.166:26656,c8fb3ab19dfac9f75085cb5e4fff36845773d8a6@43.154.60.157:26656,77b3dcacd513f7f7fa1b0247d716f464ad61e94d@65.109.65.210:34656,966e31c78c08aae8c74aa12702126141fb9cef7a@185.165.240.179:24666,92b164431c37b1b8e8cb66cbabcd688108c7479c@43.130.228.99:26656,38d23d7332b035eae29ba0abda13d32906c78c09@65.108.159.90:26656,ce62e6e53805ceae1f8f1087c5f7f6da13049cec@43.130.242.40:26656,53e2240528947ff8f7b037d347b7258f05ce88f0@89.179.68.98:27656"
+peers="f03f3a18bae28f2099648b1c8b1eadf3323cf741@162.55.211.136:26656"
 sed -i -e 's|^seeds *=.*|seeds = "'$seeds'"|; s|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.defund/config/config.toml
 ```
 ## Download Addrbook
@@ -102,6 +101,18 @@ sudo systemctl daemon-reload
 sudo systemctl enable defundd
 sudo systemctl restart defundd && sudo journalctl -u defundd -f -o cat
 ```
+## Snapshot
+```
+cd $HOME/.defund
+sudo systemctl stop defundd
+cp $HOME/.defund/data/priv_validator_state.json $HOME/.defund/priv_validator_state.json.backup
+defundd tendermint unsafe-reset-all --home $HOME/.defund --keep-addr-book
+SNAP_NAME=$(curl -s http://snapshots.autostake.net/defund-private-3/ | egrep -o ">defund-private-3.*.tar.lz4" | tr -d ">" | tail -1)
+wget -O - http://snapshots.autostake.net/defund-private-3/$SNAP_NAME | lz4 -d | tar -xvf -
+mv $HOME/.defund/priv_validator_state.json.backup $HOME/.defund/data/priv_validator_state.json
+sudo systemctl restart defundd && journalctl -u defundd -f -o cat
+defundd status 2>&1 | jq .SyncInfo
+```
 ## Sync
 ```
 defundd status 2>&1 | jq .SyncInfo
@@ -118,7 +129,7 @@ defundd tx staking create-validator  \
   --min-self-delegation "1" \
   --pubkey  $(defundd tendermint show-validator) \
   --moniker=Moniker \
-  --chain-id defund-private-3 \
+  --chain-id defund-private-4 \
   --website="" \
   --identity="" \
   --details="" \
@@ -126,3 +137,14 @@ defundd tx staking create-validator  \
   
    # if use another port --node "tcp://127.0.0.1:$$657"
 ```
+##  Delegate stake
+```
+defundd tx staking delegate $Valoper 10000000ufetf --from=wallet --chain-id=defund-private-4 --gas=auto
+```
+##  Balance
+```
+defundd q bank balances $(defundd keys show wallet -a)
+```
+##  Reset
+```
+defundd tendermint unsafe-reset-all --home $HOME/.defund --keep-addr-book
