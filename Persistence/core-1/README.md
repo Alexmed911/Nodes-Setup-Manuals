@@ -54,7 +54,7 @@ persistenceCore init Name --chain-id core-1
 ```
 wget -O $HOME/.persistenceCore/config/genesis.json "https://raw.githubusercontent.com/Alexmed911/Nodes-Setup-Manuals/main/Persistence/core-1/genesis.json"
 sha256sum $HOME/.persistenceCore/config/genesis.json
-# 66d0ffe2912176907e62e94bbec3b20b8ac4171723378e6054123f513482d782
+# 8f10731c176b123282a9032f78cf939f72c07012d7f5761dc55f3454e88c6d20
 ```
 ## Create/recover wallet
 ```
