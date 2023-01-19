@@ -73,9 +73,9 @@ Konstellation<b>
  <tr>
  <td align="center" width="200">
       <a href="" >
-        <img src="https://static.wixstatic.com/media/80368b_6d278c8c8ffa4c07b91419c4532c608a~mv2.png/v1/fill/w_146,h_190,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/source%20icon.png" width="400" height="150"  />
+        <img src="https://avatars.githubusercontent.com/u/103436687?s=200&v=4" width="400" height="150"  />
       </a>
-      <br><b>Source Protocol<b>
+      <br><b>Nolus Protocol<b>
     </td>
   <td align="center" width="200">
       <a href="https://github.com/Alexmed911/Nodes-Setup-Manuals/tree/main/Canto" >
