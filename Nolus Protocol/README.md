@@ -32,7 +32,7 @@ git clone https://github.com/Nolus-Protocol/nolus-core
 cd nolus-core
 git checkout v0.1.39
 make install
-cantod version
+nolusd version
 # v0.1.39
 ```
 ## Initialize the node
