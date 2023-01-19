@@ -1,6 +1,6 @@
 # Canto Mainnet (canto_7700-1)
 
-![image](https://pbs.twimg.com/card_img/1613202606721208321/dFLqngMb?format=jpg&name=4096x4096)
+![image](https://avatars.githubusercontent.com/u/104648009?s=200&v=4)
 
 ## <a href="https://canto.io/">🌎 Website </a>
 ## <a href="https://discord.com/invite/ucRX6XCFbr">💎 Discord </a>
