@@ -32,20 +32,20 @@ cd $HOME
 git clone https://github.com/lavanet/lava
 cd lava
 git fetch --all
-git checkout v0.4.3
+git checkout v0.4.4
 make install
 ```
-## 11.01.23 Update v0.4.3
+## 24.01.23 Update v0.4.3
 
 ```
 cd $HOME
 git clone https://github.com/lavanet/lava
 cd lava
 git fetch --all
-git checkout v0.4.3
+git checkout v0.4.4
 make install
 lavad version
-#v0.4.3
+#v0.4.4
 ```
 ## Initialize the node
 ```
