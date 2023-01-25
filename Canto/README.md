@@ -42,7 +42,6 @@ cd Canto
 git pull
 git checkout v5.0.0
 make install
-# cp cantod /root/go/bin
 cantod version
 # 5.0.0
 ```
