@@ -30,10 +30,21 @@ go version
 ```
 git clone https://github.com/Canto-Network/Canto
 cd Canto
-git checkout v4.0.0
+git checkout v5.0.0
 make install
 cantod version
-# v4.0.0
+# v5.0.0
+```
+## Update 25.01.23 
+
+```
+cd Canto
+git pull
+git checkout v5.0.0
+make install
+# cp cantod /root/go/bin
+cantod version
+# 5.0.0
 ```
 ## Initialize the node
 ```
