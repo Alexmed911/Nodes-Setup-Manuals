@@ -63,7 +63,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.realio-network/config
 ```
 ## Download Addrbook
 ```
-wget -O $HOME/.cantod/config/addrbook.json "https://raw.githubusercontent.com/Alexmed911/Nodes-Setup-Manuals/main/Realio Network/addrbook.json"
+wget -O $HOME/.realio-network/config/addrbook.json "https://raw.githubusercontent.com/Alexmed911/Nodes-Setup-Manuals/main/Realio Network/addrbook.json"
 ```
 ## Pruning
 ```
