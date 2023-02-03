@@ -25,17 +25,17 @@ source $HOME/.bash_profile && \
 go version    
 #1.19.3
 ```
-## Install Node 15.01.23
+## Install Node (upd 03.02.23)
 
 ```
 cd $HOME
 rm -rf defund
 git clone https://github.com/defund-labs/defund.git
 cd defund
-git checkout v0.2.2
+git checkout v0.2.3
 make install
 defundd version         
-#v0.2.2
+#v0.2.3
 ```
 
 ## Initialize the node
