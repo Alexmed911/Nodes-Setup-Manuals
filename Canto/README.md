@@ -152,11 +152,11 @@ cantod tx staking create-validator \
   ``` 
 ##  Delegate stake
 ```
-cantod tx staking delegate $Valoper 1000000acanto --from=wallet --chain-id=canto_7700-1 --gas=auto
+cantod tx staking delegate $Valoper 1000000acanto --from=wallet --fees=250000000000000000acanto --gas=250000 --chain-id=canto_7700-1 
 ```
 ##  Withdraw reward with commision
 ```
-cantod tx distribution withdraw-rewards $Valoper--from=wallet --commission --chain-id=canto_7700-1 --gas=auto
+cantod tx distribution withdraw-rewards $Valoper --from=wallet --commission --fees=300000000000000000acanto --chain-id=canto_7700-1
 ```
 ##  Balance
 ```
