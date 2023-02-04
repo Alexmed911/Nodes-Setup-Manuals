@@ -32,10 +32,10 @@ cd $HOME
 rm -rf defund
 git clone https://github.com/defund-labs/defund.git
 cd defund
-git checkout v0.2.3
+git checkout v0.2.4
 make install
 defundd version         
-#v0.2.3
+#v0.2.4
 ```
 
 ## Initialize the node
