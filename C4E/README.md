@@ -44,7 +44,7 @@ c4ed init Name --chain-id perun-1
 ```
 wget -O $HOME/.c4e-chain/config/genesis.json "https://raw.githubusercontent.com/Alexmed911/Nodes-Setup-Manuals/main/C4E/genesis.json"
 sha256sum $HOME/.c4e-chain/config/genesis.json
-# 5048ba449ae348682fd86840452e88bd0812316279697c04ad288a9059f12f59
+# 6c736993a681a6759d3ec41550995fe04f48dd332d03375d879f3b464c6ceabf
 ```
 ## Create/recover wallet
 ```
