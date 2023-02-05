@@ -46,3 +46,10 @@ https://your_node_ip:8080/
 
 ![image](https://docs.shardeum.org/assets/images/overviewBetanet-4ffa4b2b726131cca036f002391e06f3.png)
 
+# Go to the “Maintenance” page, then click the “Start Node” button in the top left white box:
+
+![image](https://docs.shardeum.org/assets/images/overviewBetanet-4ffa4b2b726131cca036f002391e06f3.png)
+
+# Go to the “Maintenance” page, then click the “Start Node” button in the top left white box:
+
+![image](https://docs.shardeum.org/assets/images/startBetanet-3887761f685e3e0c2785dc609f7db4df.png)
