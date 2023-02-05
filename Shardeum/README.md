@@ -61,3 +61,9 @@ https://your_node_ip:8080/
 # Add Stake 
 
 ![image](https://docs.shardeum.org/assets/images/connectedWalletAddStake-cb4ad52d4df8267630fb41cf8397f28d.png)
+
+## If your node status is on Standby and you have 10 SHM or more staked, your validator node is setup correctly.
+
+## The network will automatically add your validator to be active in the network.
+
+## The time to be added as an active validator will vary based on network load and validators in the network.
