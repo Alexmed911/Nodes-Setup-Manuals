@@ -96,10 +96,10 @@ Konstellation<b>
       <br><b>Realio Network<b>
     </td>
      <td align="center" width="200">
-      <a href="" >
-        <img src="https://pbs.twimg.com/profile_images/1404854187721203715/zZp1s7c3_400x400.jpg" width="400" height="150"  />
+      <a href="https://github.com/Alexmed911/Nodes-Setup-Manuals/tree/main/C4E" >
+        <img src="https://avatars.githubusercontent.com/u/101329004?s=200&v=4" width="400" height="150"  />
       </a>
-      <br><b>Celestia<b>
+      <br><b>C4E<b>
     </td>
    </tr>
 </table>
