@@ -56,7 +56,7 @@ https://your_node_ip:8080/
 
 # Use Faucet 
 
-https://docs.shardeum.org/Faucet/Claim#shardeum-faucet-website
+# https://docs.shardeum.org/Faucet/Claim#shardeum-faucet-website
 
 # Add Stake 
 
