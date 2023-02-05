@@ -84,10 +84,10 @@ Konstellation<b>
       <br><b>Canto<b>
     </td>
    <td align="center" width="200">
-      <a href="" >
-        <img src="https://stigga.org/gallery_gen/510715830304b7df8aba69d816138228_126x126.png" width="400" height="150"  />
+      <a href="https://github.com/Alexmed911/Nodes-Setup-Manuals/tree/main/Shardeum" >
+        <img src="https://avatars.githubusercontent.com/u/98940804?s=200&v=4" width="400" height="150"  />
       </a>
-      <br><b>Ki Chain<b>
+      <br><b>Shardeum<b>
     </td>
     <td align="center" width="200">
       <a href="https://github.com/Alexmed911/Nodes-Setup-Manuals/tree/main/Realio%20Network" >
