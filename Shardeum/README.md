@@ -1,4 +1,4 @@
-Shardeum Testnet 
+# Shardeum Betanet 
 
 ![image](https://shardeum.org/Shardeum.png)
 
@@ -48,8 +48,16 @@ https://your_node_ip:8080/
 
 # Go to the “Maintenance” page, then click the “Start Node” button in the top left white box:
 
-![image](https://docs.shardeum.org/assets/images/overviewBetanet-4ffa4b2b726131cca036f002391e06f3.png)
-
-# Go to the “Maintenance” page, then click the “Start Node” button in the top left white box:
-
 ![image](https://docs.shardeum.org/assets/images/startBetanet-3887761f685e3e0c2785dc609f7db4df.png)
+
+# Connect Wallet to Betanet https://docs.shardeum.org/Network/Endpoints#connect-wallet
+
+![image](https://docs.shardeum.org/assets/images/connectWalletBetanet-16d8f440bb744e8946309acfe5270219.png)
+
+# Use Faucet 
+
+https://docs.shardeum.org/Faucet/Claim#shardeum-faucet-website
+
+# Add Stake 
+
+![image](https://docs.shardeum.org/assets/images/connectedWalletAddStake-cb4ad52d4df8267630fb41cf8397f28d.png)
