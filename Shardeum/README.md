@@ -41,3 +41,8 @@ https://your_node_ip:8080/
 
 ```
 ![image](https://docs.shardeum.org/assets/images/loginPage-908fe8d97a77c39e92c16d8fe73c7cdd.png)
+
+# You should see the “Overview” page for the Shardeum Validator Dashboard in your web browser:
+
+![image](https://docs.shardeum.org/assets/images/overviewBetanet-4ffa4b2b726131cca036f002391e06f3.png)
+
