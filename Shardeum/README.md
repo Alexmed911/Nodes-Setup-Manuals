@@ -38,5 +38,6 @@ cd .shardeum
 operator-cli gui start
 #Go to your web browser and go to:
 https://your_node_ip:8080/
-![image](https://docs.shardeum.org/assets/images/loginPage-908fe8d97a77c39e92c16d8fe73c7cdd.png)
+
 ```
+![image](https://docs.shardeum.org/assets/images/loginPage-908fe8d97a77c39e92c16d8fe73c7cdd.png)
