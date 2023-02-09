@@ -43,9 +43,9 @@ althea init Name --chain-id althea_7357-1
 
 ## Download Genesis
 ```
-wget -O $HOME/.cantod/config/genesis.json "https://raw.githubusercontent.com/Alexmed911/Nodes-Setup-Manuals/main/Althea/genesis.json"
-sha256sum $HOME/.cantod/config/genesis.json
-# 5048ba449ae348682fd86840452e88bd0812316279697c04ad288a9059f12f59
+wget -O $HOME/.althea/config/genesis.json "https://raw.githubusercontent.com/Alexmed911/Nodes-Setup-Manuals/main/Althea/genesis.json"
+sha256sum $HOME/.althea/config/genesis.json
+# af9260b536bc83875ae335d43a1b467967616a439ac736b3d18d6167a404f0b9
 ```
 ## Create/recover wallet
 ```
@@ -115,7 +115,7 @@ s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
 s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.althea/config/config.toml
 
-mv $HOME/.cantod/priv_validator_state.json.backup $HOME/.althea/data/priv_validator_state.json
+mv $HOME/.althea/priv_validator_state.json.backup $HOME/.althea/data/priv_validator_state.json
 sudo systemctl restart althea && journalctl -u althea -f -o cat
 ```
 ## Create validator
