@@ -4,7 +4,7 @@
 
 ## <a href="https://www.althea.net/">🌎 Website </a>
 ## <a href="https://discord.gg/4FYRYmnW">💎 Discord </a>
-## <a href="https://ping.pub/">🚀 Explorer </a>
+## <a href="https://www.skynetexplorers.com/althea">🚀 Explorer </a>
 
 # Manual Setup
 
@@ -104,7 +104,7 @@ sudo systemctl restart althea && sudo journalctl -u althea -f -o cat
 ```
 cp $HOME/.althea/data/priv_validator_state.json $HOME/.althea/priv_validator_state.json.backup
 althea tendermint unsafe-reset-all --home $HOME/.althea --keep-addr-book
-SNAP_RPC=""
+SNAP_RPC="https://althea-testnet-rpc.polkachu.com:443"
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
 TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
