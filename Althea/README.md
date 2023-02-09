@@ -56,7 +56,7 @@ althea keys add wallet --recover
 ## Configure Peers/Gas-prices/Indexing
 ```
 sed -i 's|^minimum-gas-prices *=.*|minimum-gas-prices = "0.00ualthea"|g' $HOME/.althea/config/app.toml
-peers="19da65350e754586cd2311a5c90032ec2461f07f@65.21.202.116:26656,b0a85e37973ba1e2a304c9c5e65c454c218eb2c0@canto.p2p.chandrastation.com:26656,16ca056442ffcfe509cee9be37817370599dcee1@147.182.255.149:26656"
+peers="733e9d5f995c2866df9f2e1254551940f060a70c@51.159.159.112:26656,11e8f38e3c5601e4ab2333d5a5bbb108a39b8e1c@159.69.110.238:26656,a81cf8f7f330e2e09bec93c866214f7b3b336849@65.109.87.88:26356,83147260a704b75283ca6da218516ee0eaa82956@170.64.156.36:26656,617433cdf5411fc9241d0f77239f751a14669368@146.190.156.221:26656,856ac01afa0163c27b69e1b25464427310120924@85.25.134.23:26656,d320b861277a338daefec6e620daafe07fc5ee19@65.108.199.36:20036,8203297aacaea1d889fcf36240484c9efc217bbd@116.202.156.106:26656,c6e1ed7117cd56036cc51835945d155e9c474c01@167.235.144.3:26656"
 sed -i -e 's|^seeds *=.*|seeds = "'$seeds'"|; s|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.althea/config/config.toml
 indexer="null" && \
 sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.althea/config/config.toml
