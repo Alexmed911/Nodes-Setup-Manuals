@@ -149,7 +149,7 @@ althea tx distribution withdraw-rewards $Valoper --from=wallet --commission --fe
 ```
 ##  Balance
 ```
-althea q bank balances $(cantod keys show wallet -a)
+althea q bank balances $(althea keys show wallet -a)
 ```
 ##  Reset
 ```
