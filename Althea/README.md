@@ -141,7 +141,7 @@ althea tx staking create-validator \
   ``` 
 ##  Delegate stake
 ```
-althea tx staking delegate $Valoper 1000000ualthea --from=wallet --fees=250ualthea --gas=250000 --chain-id=althea_7357-1
+althea tx staking delegate $Valoper 1000000ualthea --from=wallet --fees=300ualthea --chain-id=althea_7357-1
 ```
 ##  Withdraw reward with commision
 ```
