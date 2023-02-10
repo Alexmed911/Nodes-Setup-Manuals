@@ -49,8 +49,8 @@ sha256sum $HOME/.althea/config/genesis.json
 ```
 ## Create/recover wallet
 ```
-althea keys add wallet
-althea keys add wallet --recover
+althea keys add wallet --algo secp256k1 --coin-type 118
+althea keys add wallet --algo secp256k1 --coin-type 118 --recover
 ```
 
 ## Configure Peers/Gas-prices/Indexing
