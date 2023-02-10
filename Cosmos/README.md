@@ -32,7 +32,7 @@ git clone https://github.com/cosmos/gaia cosmos
 cd cosmos
 git checkout v7.1.0
 make install
-gaia version
+gaiad version
 # v7.1.0
 ```
 ## Initialize the node
