@@ -43,7 +43,9 @@ gaiad init Moniker --chain-id cosmoshub-4
 
 ## Download Genesis
 ```
-wget -O $HOME/.gaia/config/genesis.json "https://raw.githubusercontent.com/Alexmed911/Nodes-Setup-Manuals/main/Cosmos/genesis.json"
+wget https://raw.githubusercontent.com/cosmos/mainnet/master/genesis/genesis.cosmoshub-4.json.gz
+gzip -d genesis.cosmoshub-4.json.gz
+mv genesis.cosmoshub-4.json ~/.gaia/config/genesis.json
 sha256sum $HOME/.gaia/config/genesis.json
 # 6ad715c1ab5637e505e7248bb4366e79d5dec1a24f4fac7db33fead567041633
 ```
