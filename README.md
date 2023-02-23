@@ -100,6 +100,36 @@ Konstellation<b>
         <img src="https://avatars.githubusercontent.com/u/101329004?s=200&v=4" width="400" height="150"  />
       </a>
       <br><b>C4E<b>
+      <tr>
+ <td align="center" width="200">
+      <a href="https://github.com/Alexmed911/Nodes-Setup-Manuals/tree/main/Althea" >
+        <img src="https://avatars.githubusercontent.com/u/25123050?s=280&v=4" width="400" height="150"  />
+      </a>
+      <br><b>Althea<b>
+    </td>
+  <td align="center" width="200">
+      <a href="https://github.com/Alexmed911/Nodes-Setup-Manuals/tree/main/Sui" >
+        <img src="https://pbs.twimg.com/profile_images/1582380655027052544/dK8glmZ3_400x400.jpg" width="400" height="150"  />
+      </a>
+      <br><b>Sui<b>
+    </td>
+   <td align="center" width="200">
+      <a href="https://github.com/Alexmed911/Nodes-Setup-Manuals/tree/main/Cosmos" >
+         <img src="https://pbs.twimg.com/profile_images/1572270323105660931/wfrYRGAC_400x400.jpg" width="400" height="150"  />
+      </a>
+      <br><b>Cosmos<b>
+    </td>
+    <td align="center" width="200">
+      <a href="" >
+        <img src="https://pbs.twimg.com/profile_images/1552665904542109698/8279XiU1_400x400.png" width="400" height="150"  />
+      </a>
+      <br><b>Quasar<b>
+    </td>
+     <td align="center" width="200">
+      <a href="" >
+        <img src="https://uploads-ssl.webflow.com/629a5c78c1d8bfb53958fb1b/62b5c3e17eb0e3930d04ddd8_hero-nebula-logo-svg.svg" width="400" height="150"  />
+      </a>
+     <br><b>Andromeda<b>
     </td>
    </tr>
 </table>
