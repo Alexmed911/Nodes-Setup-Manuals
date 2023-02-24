@@ -31,10 +31,20 @@ go version
 cd $HOME
 git clone https://github.com/UptickNetwork/uptick.git
 cd uptick
-git checkout v0.2.5
+git checkout v0.2.6
 make install
 uptick version         
-#0.2.5
+#0.2.6
+```
+## Update 24.02.23
+
+```
+cd uptick
+git pull
+git checkout v0.2.6
+make install
+uptick version         
+#0.2.6
 ```
 ## Initialize the node
 ```
