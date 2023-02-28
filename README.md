@@ -40,7 +40,7 @@
  <tr>
     <td align="center" width="200">
       <a href="https://github.com/Alexmed911/Nodes-Setup-Manuals/tree/main/Konstellation" >
-        <img src="https://stigga.org/gallery_gen/afc7ef23073ccf82ab4884bdda1ae37a_140x140.png" width="400" height="150"  />
+        <img src="https://avatars.githubusercontent.com/u/47561122?v=4" width="400" height="150"  />
       </a>
       <br><b>
 Konstellation<b>
