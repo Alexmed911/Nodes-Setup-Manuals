@@ -1,4 +1,4 @@
-# Nibiru Testnet (nibiru-testnet-2)
+# Nibiru Testnet (nibiru-itn-1)
 
 ![image](https://techcrunch.com/wp-content/uploads/2022/09/nibiru.jpg?resize=1200,587)
 
@@ -31,21 +31,21 @@ go version
 cd $HOME
 git clone https://github.com/NibiruChain/nibiru
 cd nibiru
-git checkout v0.16.3
+git checkout v0.19.2
 make install
 nibid version         
-#v0.16.3
+#v0.19.2
 ```
 ## Initialize the node
 ```
-nibid init Name --chain-id=nibiru-testnet-2
+nibid init Name --chain-id=nibiru-itn-1
 ```
 
 ## Download Genesis
 ```
 wget -O $HOME/.nibid/config/genesis.json "https://raw.githubusercontent.com/Alexmed911/Nodes-Setup-Manuals/main/Nibiru/genesis.json"
 sha256sum $HOME/.nibid/config/genesis.json
-# 5cedb9237c6d807a89468268071647649e90b40ac8cd6d1ded8a72323144880d
+# e162ace87f5cbc624aa2a4882006312ef8762a8a549cf4a22ae35bba12482c72
 ```
 ## Create/recover wallet
 ```
@@ -122,7 +122,7 @@ nibid tx staking create-validator \
 --from wallet \
 --amount 1000000unibi \
 --pubkey "$(nibid tendermint show-validator)" \
---chain-id nibiru-testnet-2 \
+--chain-id nibiru-itn-1 \
 --moniker="Name" \
 --commission-max-change-rate=0.01 \
 --commission-max-rate=1.0 \
@@ -140,7 +140,7 @@ nibid tx staking create-validator \
   ``` 
 ##  Delegate stake
 ```
-nibid tx staking delegate $Valoper 10000000ulava --from=wallet --chain-id=nibiru-testnet-2 --gas=auto
+nibid tx staking delegate $Valoper 10000000ulava --from=wallet --chain-id=nibiru-itn-1 --gas=auto
 ```
 ##  Balance
 ```
