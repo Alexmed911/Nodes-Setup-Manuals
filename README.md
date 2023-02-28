@@ -65,7 +65,7 @@ Konstellation<b>
     </td> 
       <td align="center" width="200">
       <a href="https://github.com/Alexmed911/Nodes-Setup-Manuals/tree/main/Jakal" >
-        <img src="https://stigga.org/gallery_gen/d5be14363aea6f963c2ffcc89bd7221d_126x126.png" width="400" height="150"  />
+        <img src="https://github.com/JackalLabs/canine-chain/blob/master/banner.png" width="400" height="150"  />
       </a>
       <br><b>Jakal<b>
     </td>
@@ -79,7 +79,7 @@ Konstellation<b>
     </td>
   <td align="center" width="200">
       <a href="https://github.com/Alexmed911/Nodes-Setup-Manuals/tree/main/Canto" >
-        <img src="https://stigga.org/gallery_gen/fa1758b8e64ecdf2a08ee025e1a250e5_216x212.png" width="400" height="150"  />
+        <img src="https://avatars.githubusercontent.com/u/104648009?s=200&v=4" width="400" height="150"  />
       </a>
       <br><b>Canto<b>
     </td>
