@@ -73,7 +73,7 @@ sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.nolus/config/config.t
 ```
 ## Download Addrbook
 ```
-wget -O $HOME/.nolus/config/addrbook.json "https://raw.githubusercontent.com/obajay/nodes-Guides/main/Nolus/addrbook.json"
+wget -O $HOME/.nolus/config/addrbook.json "https://raw.githubusercontent.com/Alexmed911/Nodes-Setup-Manuals/main/Nolus Protocol/addrbook.json"
 ```
 ## Pruning
 ```
@@ -160,7 +160,7 @@ nolusd tx distribution withdraw-rewards $Valoper--from=wallet --commission --cha
 ```
 ##  Balance
 ```
-nolusd q bank balances $(cantod keys show wallet -a)
+nolusd q bank balances $(nolusd keys show wallet -a)
 ```
 ##  Reset
 ```
