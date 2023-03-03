@@ -28,7 +28,9 @@ go version
 ## Install Node
 
 ```
-wget "https://raw.githubusercontent.com/Alexmed911/Nodes-Setup-Manuals/main/Mande Network/mande-chaind.tar.gz"
+# download binary file
+https://drive.google.com/file/d/1urBWRayR2FnqdBdhH5OTnEXMTE1x4w4B
+# unpack the archive on the server
 tar -xzvf mande-chaind.tar.gz && chmod +x mande-chaind
 mv mande-chaind go/bin/
 mande-chaind version
