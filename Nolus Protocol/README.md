@@ -110,21 +110,13 @@ sudo systemctl daemon-reload
 sudo systemctl enable nolusd
 sudo systemctl restart nolusd && sudo journalctl -u nolusd -f -o cat
 ```
-## State-Sync
+## Shapshot ~1GB updated every 12 hours
 ```
+apt install lz4
+sudo systemctl stop nolusd
 cp $HOME/.nolus/data/priv_validator_state.json $HOME/.nolus/priv_validator_state.json.backup
-nolusd tendermint unsafe-reset-all --home $HOME/.nolus --keep-addr-book
-SNAP_RPC="https://nolus.rpc.yeksin.net:443"
-LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
-BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
-TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
-
-sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
-s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
-s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
-s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
-s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.nolus/config/config.toml
-
+rm -rf $HOME/.nolus/data
+curl -L http://65.109.81.119/nolus.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.nolus
 mv $HOME/.nolus/priv_validator_state.json.backup $HOME/.nolus/data/priv_validator_state.json
 sudo systemctl restart nolusd && journalctl -u nolusd -f -o cat
 ```
