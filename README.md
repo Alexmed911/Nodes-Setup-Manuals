@@ -8,7 +8,7 @@
   <tr>
     <td align="center" width="200">
       <a href="https://github.com/Alexmed911/Nodes-Setup-Manuals/tree/main/Cyber">
-        <img src="https://stigga.org/gallery_gen/296367cbf28eebc0c19d1677aa388985.png" width="300" height="150"  />
+        <img src="https://pbs.twimg.com/profile_images/1169537527054786560/L9Xo3ZKi_400x400.png" width="300" height="150"  />
       </a>
       <br><b>Cyber<b>
     </td>
