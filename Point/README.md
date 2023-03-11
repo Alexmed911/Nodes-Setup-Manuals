@@ -100,7 +100,7 @@ sudo systemctl daemon-reload
 sudo systemctl enable pointd
 sudo systemctl restart pointd && sudo journalctl -u pointd -f -o cat
 ```
-## Shapshot ~1GB updated every 12 hours
+## State-Sync
 ```
 cp $HOME/.pointd/data/priv_validator_state.json $HOME/.pointd/priv_validator_state.json.backup
 pointd tendermint unsafe-reset-all --home $HOME/.pointd --keep-addr-book
