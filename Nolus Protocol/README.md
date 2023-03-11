@@ -30,20 +30,20 @@ go version
 ```
 git clone https://github.com/Nolus-Protocol/nolus-core
 cd nolus-core
-git checkout v0.1.43
+git checkout v0.2.1-testnet
 make install
 nolusd version
-# v0.1.43
+# v0.2.1-testnet
 ```
-## Update 24.02.23
+## Update 11.03.23
 
 ```
 cd nolus-core
 git pull
-git checkout v0.1.43
+git checkout v0.2.1-testnet
 make install
 nolusd version
-# v0.1.43
+# v0.2.1-testnet
 ```
 ## Initialize the node
 ```
