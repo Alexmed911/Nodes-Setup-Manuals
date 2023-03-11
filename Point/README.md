@@ -104,7 +104,7 @@ sudo systemctl restart pointd && sudo journalctl -u pointd -f -o cat
 ```
 cp $HOME/.pointd/data/priv_validator_state.json $HOME/.pointd/priv_validator_state.json.backup
 pointd tendermint unsafe-reset-all --home $HOME/.pointd --keep-addr-book
-SNAP_RPC="https://rpc.point.indonode.net:443"
+SNAP_RPC="https://rpc.point.nodestake.top:443"
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
 TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
