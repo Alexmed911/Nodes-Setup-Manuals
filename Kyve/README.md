@@ -28,11 +28,12 @@ go version
 ## Install Node
 
 ```
-wget https://kyve-korellia.s3.eu-central-1.amazonaws.com/v0.8.0/kyved_linux_amd64.tar.gz
-tar -xvzf kyved_linux_amd64.tar.gz
-chmod +x chaind
-sudo mv chaind $HOME/go/bin/chaind
-rm kyved_linux_amd64.tar.gz
+cd $HOME
+git clone https://github.com/KYVENetwork/chain.git && cd chain
+git checkout v1.0.0
+make install
+kyved version
+#v1.0.0
 
 ```
 ## Initialize the node
