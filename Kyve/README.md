@@ -1,4 +1,4 @@
-# Kyve Testnet (kaon-1)
+# Kyve Mainnet (kyve-1)
 
 ![image](https://miro.medium.com/max/1400/1*2u3ic7iltVQiH7nmUceZjw.png)
 
@@ -37,14 +37,14 @@ rm kyved_linux_amd64.tar.gz
 ```
 ## Initialize the node
 ```
-kyved init Name --chain-id kaon-1
+kyved init Name --chain-id kyve-1
 ```
 
 ## Download Genesis
 ```
 wget -O $HOME/.kyve/config/genesis.json "https://raw.githubusercontent.com/Alexmed911/Nodes-Setup-Manuals/main/Kyve/genesis.json"
 sha256sum $HOME/.kyve/config/genesis.json
-# 3532166eb1605057f633ff577b4fc3e57a6dddc46498c5bc6f2f4e8ab0c756b8
+# 1dc3ec916f49ef8c221851566aca12a3f914b23afb3ab35067fc8a8d5f59c2ee
 ```
 ## Create/recover wallet
 ```
@@ -54,8 +54,8 @@ kyved keys add wallet --recover
 
 ## Configure Peers/Gas-prices/Indexing
 ```
-sed -i 's|^minimum-gas-prices *=.*|minimum-gas-prices = "0.001tkyve"|g' $HOME/.kyve/config/app.toml
-peers="81.30.157.35:14656,664e06d2d6110c5ba93f8ecfee66f150bad981bf@kyve-testnet-peer.itrocket.net:28656,5f54a853e7224ad32cbe4e5cddead24b512b629f@51.159.191.220:28656,5d79eb04b94300f5a7982e065a6340ba4ebd4da3@45.33.28.253:26656,157e0aca4aa382d62e24ffc7f936a5e8bbf4e90e@207.180.245.116:46656,b2b4479a6cb001ffe39d4a95f31bb6993ae0a256@194.163.190.31:26656,c0c8ed45a6c266c4ebe028788456cb14b44164bb@65.109.37.21:27656,f5a6484b239fdbe3f9c9bad889d737e8a9f153c6@149.102.140.248:46656,cf69d30beecfdd44d497fb56eb61b12bbffaf38f@167.86.72.171:26656,39392cf41c1d7ae8f98b6efaa740dc4abe3002ff@65.109.92.241:20656,72df41dabaa13d194e2aa633b1f9af60c9cbd5a2@45.158.38.38:26656,0a7504c77cbeb0c3ead588972780f4c670f5a377@65.109.135.149:26656"
+sed -i 's|^minimum-gas-prices *=.*|minimum-gas-prices = "0ukyve"|g' $HOME/.kyve/config/app.toml
+peers="38ec29fb7b8babdb592fbaa7131cdbb72ac72476@5.9.61.78:15656,25da6253fc8740893277630461eb34c2e4daf545@3.76.244.30:26656"
 sed -i -e 's|^seeds *=.*|seeds = "'$seeds'"|; s|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.kyve/config/config.toml
 indexer="null" && \
 sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.kyve/config/config.toml
@@ -103,7 +103,7 @@ sudo systemctl restart kyved && sudo journalctl -u kyved -f -o cat
 ```
 cp $HOME/.kyve/data/priv_validator_state.json $HOME/.kyve/priv_validator_state.json.backup
 kyved tendermint unsafe-reset-all --home $HOME/.kyve --keep-addr-book
-SNAP_RPC=""
+SNAP_RPC="SOON"
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
 TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
@@ -120,7 +120,7 @@ sudo systemctl restart kyved && journalctl -u kyved -f -o cat
 ## Create validator
 ```
 kyved tx staking create-validator \
- --amount 10000000tkyve \
+ --amount 10000000ukyve \
  --from wallet \
  --commission-max-change-rate "0.1" \
  --commission-max-rate "0.2" \
@@ -131,20 +131,20 @@ kyved tx staking create-validator \
  --details="" \
  --website="" \
  --identity="" \
- --fees=1009405tkyve \
+ --fees=1009405ukyve \
  --gas=auto \
- --chain-id kaon-1
+ --chain-id kyve-1
 
   
 # if use another port --node "tcp://127.0.0.1:$$657"
   ``` 
 ##  Delegate stake
 ```
-kyved tx staking delegate $Valoper 1000000tkyve --from=wallet --chain-id=kaon-1 --gas=auto
+kyved tx staking delegate $Valoper 1000000ukyve --from=wallet --chain-id=kaon-1 --gas=auto
 ```
 ##  Withdraw reward with commision
 ```
-kyved tx distribution withdraw-rewards $Valoper--from=wallet --commission --chain-id=kaon-1 --gas=auto
+kyved tx distribution withdraw-rewards $Valoper--from=wallet --commission --chain-id=kyve-1 --gas=auto
 ```
 ##  Balance
 ```
