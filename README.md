@@ -32,7 +32,7 @@
     </td>  
     <td align="center" width="200">
       <a href="https://github.com/Alexmed911/Nodes-Setup-Manuals/tree/main/Nibiru" >
-        <img src="https://pbs.twimg.com/profile_images/1556857504394526721/OyWtRrNP_400x400.jpg" width="400" height="150"  />
+        <img src="https://avatars.githubusercontent.com/u/95279816?s=200&v=4" width="400" height="150"  />
       </a>
       <br><b>Nibiru<b>
     </td>
