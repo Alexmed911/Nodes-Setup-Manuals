@@ -31,20 +31,20 @@ go version
 cd $HOME
 git clone https://github.com/okp4/okp4d.git
 cd okp4d
-git checkout v4.0.0
+git checkout v4.1.0
 make install
 okp4d version         
-#v4.0.0
+#v4.1.0
 ```
-## Update 22.02.2023
+## Update 23.03.2023
 
 ```
 cd okp4d
 git fetch --all
-git checkout v4.0.0
+git checkout v4.1.0
 make install
 okp4d version         
-#v4.0.0
+#v4.1.0
 ```
 ## Initialize the node
 ```
