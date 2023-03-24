@@ -1,4 +1,4 @@
-# Defund Testnet (defund-private-4)
+# Defund Testnet (orbit-alpha-1)
 
 ![image](https://miro.medium.com/max/750/1*ARSUtObxo8xSh2kReWgv2Q.webp)
 
@@ -25,32 +25,32 @@ source $HOME/.bash_profile && \
 go version    
 #1.19.3
 ```
-## Install Node (upd 03.02.23)
+## Install Node (upd 20.03.23)
 
 ```
 cd $HOME
 rm -rf defund
-git clone https://github.com/defund-labs/defund.git
+git clone https://github.com/defund-labs/defund
 cd defund
-git checkout v0.2.4
+git checkout v0.2.6
 make install
 defundd version         
-#v0.2.4
+#v0.2.6
 ```
 
 ## Initialize the node
 ```
 defundd config keyring-backend test
-defundd config chain-id defund-private-4
-defundd init $Moniker-name --chain-id defund-private-4
+defundd config chain-id orbit-alpha-1
+defundd init $Moniker-name --chain-id orbit-alpha-1
 ```
 
 ## Download Genesis
 ```
 cd $HOME/.defund/config
-curl -s https://raw.githubusercontent.com/defund-labs/testnet/main/defund-private-4/genesis.json > ~/.defund/config/genesis.json
+curl -s https://raw.githubusercontent.com/Alexmed911/Nodes-Setup-Manuals/main/Defund/genesis.json > ~/.defund/config/genesis.json
 sha256sum $HOME/.defund/config/genesis.json
-# db13a33fbb4048c8701294de79a42a2b5dff599d653c0ee110390783c833208b
+# 58916f9c7c4c4b381f55b6274bce9b8b8d482bfb15362099814ff7d0c1496658
 ```
 ## Create/recover wallet
 ```
@@ -61,7 +61,7 @@ defundd keys add wallet --recover
 ## Configure Peers/Gas-prices
 ```
 sed -i 's|^minimum-gas-prices *=.*|minimum-gas-prices = "0.0001ufetf"|g' $HOME/.defund/config/app.toml
-peers="f03f3a18bae28f2099648b1c8b1eadf3323cf741@162.55.211.136:26656"
+peers="f902d7562b7687000334369c491654e176afd26d@170.187.157.19:26656,f8093378e2e5e8fc313f9285e96e70a11e4b58d5@rpc2.defund.nodes.guru:45656,3594b1f46c6321d9f99cda8ad5ef5a367ce06ccf@199.247.16.116:26656"
 sed -i -e 's|^seeds *=.*|seeds = "'$seeds'"|; s|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.defund/config/config.toml
 ```
 ## Download Addrbook
@@ -107,8 +107,8 @@ cd $HOME/.defund
 sudo systemctl stop defundd
 cp $HOME/.defund/data/priv_validator_state.json $HOME/.defund/priv_validator_state.json.backup
 defundd tendermint unsafe-reset-all --home $HOME/.defund --keep-addr-book
-SNAP_NAME=$(curl -s http://snapshots.autostake.net/defund-private-4/ | egrep -o ">defund-private-4.*.tar.lz4" | tr -d ">" | tail -1)
-wget -O - http://snapshots.autostake.net/defund-private-4/$SNAP_NAME | lz4 -d | tar -xvf -
+SNAP_NAME=$(curl -s http://snapshots.autostake.net/orbit-alpha-1/ | egrep -o ">orbit-alpha-1.*.tar.lz4" | tr -d ">" | tail -1)
+wget -O - http://snapshots.autostake.net/orbit-alpha-1/$SNAP_NAME | lz4 -d | tar -xvf -
 mv $HOME/.defund/priv_validator_state.json.backup $HOME/.defund/data/priv_validator_state.json
 sudo systemctl restart defundd && journalctl -u defundd -f -o cat
 defundd status 2>&1 | jq .SyncInfo
@@ -124,7 +124,7 @@ defundd tx staking create-validator  \
   --min-self-delegation "1" \
   --pubkey  $(defundd tendermint show-validator) \
   --moniker=Moniker \
-  --chain-id defund-private-4 \
+  --chain-id orbit-alpha-1 \
   --website="" \
   --identity="" \
   --details="" \
@@ -134,7 +134,7 @@ defundd tx staking create-validator  \
 ```
 ##  Delegate stake
 ```
-defundd tx staking delegate $Valoper 10000000ufetf --from=wallet --chain-id=defund-private-4 --gas=auto
+defundd tx staking delegate $Valoper 10000000ufetf --from=wallet --chain-id=orbit-alpha-1 --gas=auto
 ```
 ##  Balance
 ```
