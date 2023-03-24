@@ -30,10 +30,10 @@ go version
 ```
 git clone https://github.com/JackalLabs/canine-chain 
 cd canine-chain
-git checkout v1.1.2-hotfix
+git checkout v1.2.1
 make install
 canined version
-# v1.1.2
+# v1.3.1
 ```
 ## Initialize the node
 ```
