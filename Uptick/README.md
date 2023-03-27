@@ -1,4 +1,4 @@
-# Uptick Network Mainnet (uptick_7000-2)
+# Uptick Network Mainnet (uptick_117-1)
 
 ![image](https://miro.medium.com/max/1400/1*aCkSgk39Uhfb-1wzgTy5Pg.png)
 
