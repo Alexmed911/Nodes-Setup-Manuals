@@ -1,4 +1,4 @@
-# Uptick Network Testnet (uptick_7000-2)
+# Uptick Network Mainnet (uptick_7000-2)
 
 ![image](https://miro.medium.com/max/1400/1*aCkSgk39Uhfb-1wzgTy5Pg.png)
 
@@ -15,7 +15,7 @@ sudo apt install curl tar unzip wget tmux clang lz4 pkg-config libssl-dev jq bui
 ```
 ## Install Go
 ```
-ver="1.19.3" && \
+ver="1.19.5" && \
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
 sudo rm -rf /usr/local/go && \
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
@@ -23,7 +23,7 @@ rm "go$ver.linux-amd64.tar.gz" && \
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
 source $HOME/.bash_profile && \
 go version    
-#1.19.3
+#1.19.5
 ```
 ## Install Node
 
@@ -31,31 +31,21 @@ go version
 cd $HOME
 git clone https://github.com/UptickNetwork/uptick.git
 cd uptick
-git checkout v0.2.6
+git checkout v0.2.4
 make install
-uptick version         
-#0.2.6
-```
-## Update 24.02.23
-
-```
-cd uptick
-git pull
-git checkout v0.2.6
-make install
-uptick version         
-#0.2.6
+uptickd version         
+#v0.2.4
 ```
 ## Initialize the node
 ```
-uptickd init Name --chain-id uptick_7000-2
+uptickd init Name --chain-id uptick_117-1
 ```
 
 ## Download Genesis
 ```
 wget -O $HOME/.uptickd/config/genesis.json "https://raw.githubusercontent.com/Alexmed911/Nodes-Setup-Manuals/main/Uptick/genesis.json"
 sha256sum $HOME/.uptickd/config/genesis.json
-# f96764c7ae1bc713b2acc87b5320f2d10ee26716b3daa6cc455cb3a3906f05c2
+# df80462fed795d877fb1e372175ec66d004056fa0ec98c6c3ed52a6715efc66f
 ```
 ## Create/recover wallet
 ```
@@ -65,8 +55,8 @@ uptickd keys add key_name --recover
 
 ## Configure Peers/Gas-prices/Indexing
 ```
-sed -i 's|^minimum-gas-prices *=.*|minimum-gas-prices = "0.00auptick"|g' $HOME/.uptickd/config/app.toml
-peers="1f96655ed716ecace89f06f10bc10fad14b9fe61@51.89.232.234:27916,40ffd59440b11d63bfb8e20cfed5b36f282a06b3@154.12.238.247:31656,507999588745d6021c012b736c795a93348ae0cd@95.214.55.155:20656,38d149fd90fdc0cd3509b697ad65ff9f6f20cd8f@65.108.6.45:60956"
+sed -i 's|^minimum-gas-prices *=.*|minimum-gas-prices = "0auptick"|g' $HOME/.uptickd/config/app.toml
+peers="170397e75ca2b0f4e9f3b1bb5d0d23f9b10f01c7@uptick-sentry-1.p2p.brocha.in:30597,c0b33353fb70d8d71dcb9c8848b3b4207bd56951@uptick-sentry-2.p2p.brocha.in:30598,23e76540bea9b6851b92e280d7e0c123a0d49521@uptick-sentry-3.p2p.brocha.in:30599,94b63fddfc78230f51aeb7ac34b9fb86bd042a77@uptick-rpc.p2p.brocha.in:30601,f97a75fb69d3a5fe893dca7c8d238ccc0bd66a8f@uptick.seed.brocha.in:30600"
 sed -i -e 's|^seeds *=.*|seeds = "'$seeds'"|; s|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.uptickd/config/config.toml
 indexer="null" && \
 sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.uptickd/config/config.toml
@@ -112,27 +102,29 @@ sudo systemctl restart uptickd && sudo journalctl -u uptickd -f -o cat
 ```
 ## Snapshot
 ```
-cd $HOME/.uptickd
-sudo systemctl stop uptickd
 cp $HOME/.uptickd/data/priv_validator_state.json $HOME/.uptickd/priv_validator_state.json.backup
 uptickd tendermint unsafe-reset-all --home $HOME/.uptickd --keep-addr-book
-wget $(curl -s https://services.staketab.com/backend/uptick-testnet/ | jq -r .snap_link)
-tar -xf $(curl -s https://services.staketab.com/backend/uptick-testnet/ | jq -r .snap_filename) -C $HOME/.uptickd/data/
+SNAP_RPC="SOON"
+LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height); \
+BLOCK_HEIGHT=$((LATEST_HEIGHT - 500)); \
+TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
+
+sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
+s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
+s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
+s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
+s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"\"|" $HOME/.uptickd/config/config.toml
+
 mv $HOME/.uptickd/priv_validator_state.json.backup $HOME/.uptickd/data/priv_validator_state.json
 sudo systemctl restart uptickd && journalctl -u uptickd -f -o cat
-uptickd status 2>&1 | jq .SyncInfo
-```
-## Faucet
-```
-https://discord.com/channels/781005936260939818/953652276508119060
 ```
 ## Create validator
 ```
 uptickd tx staking create-validator \
 --from wallet \
---amount 1000000auptick \
+--amount 10000000000000000auptick \
 --pubkey "$(uptickd tendermint show-validator)" \
---chain-id uptick_7000-2 \
+--chain-id uptick_117-1 \
 --moniker="Name" \
 --commission-max-change-rate=0.01 \
 --commission-max-rate=1.0 \
@@ -150,7 +142,7 @@ uptickd tx staking create-validator \
   ``` 
 ##  Delegate stake
 ```
-uptickd tx staking delegate $Valoper 10000000auptick --from=wallet --chain-id=uptick_7000-2 --gas=auto
+uptickd tx staking delegate $Valoper 1000000000000000auptick --from=wallet --chain-id=uptick_117-1 --gas=auto
 ```
 ##  Balance
 ```
