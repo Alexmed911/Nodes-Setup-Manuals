@@ -100,7 +100,7 @@ sudo systemctl daemon-reload
 sudo systemctl enable uptickd
 sudo systemctl restart uptickd && sudo journalctl -u uptickd -f -o cat
 ```
-## Snapshot
+## State-Sync
 ```
 cp $HOME/.uptickd/data/priv_validator_state.json $HOME/.uptickd/priv_validator_state.json.backup
 uptickd tendermint unsafe-reset-all --home $HOME/.uptickd --keep-addr-book
