@@ -109,7 +109,7 @@ Konstellation<b>
     </td>
   <td align="center" width="200">
       <a href="https://github.com/Alexmed911/Nodes-Setup-Manuals/tree/main/Sui" >
-        <img src="https://pbs.twimg.com/profile_images/1582380655027052544/dK8glmZ3_400x400.jpg" width="400" height="150"  />
+        <img src="https://icodrops.com/wp-content/uploads/2022/07/dK8glmZ3_400x400.jpeg" width="400" height="150"  />
       </a>
       <br><b>Sui<b>
     </td>
