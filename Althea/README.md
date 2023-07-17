@@ -1,4 +1,4 @@
-# Althea Testnet (althea_7357-1)
+# Althea Testnet (althea_417834-3)
 
 ![image](https://blog.althea.net/content/images/2021/09/newlogo-1-2.png)
 
