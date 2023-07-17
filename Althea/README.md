@@ -28,29 +28,22 @@ go version
 ## Install Node
 
 ```
-git clone https://github.com/althea-net/althea-chain
-cd althea-chain
-git checkout v0.3.2
-make install
+wget https://github.com/althea-net/althea-L1/releases/download/v0.5.5/althea-linux-amd64
+chmod +x althea-linux-amd64
+sudo mv althea-linux-amd64 $HOME/go/bin/althea
 althea version
 # v0.3.2
 ```
 ## Initialize the node
 ```
-althea config keyring-backend test
-althea init Name --chain-id althea_7357-1
+althea init Name --chain-id 417834-3
+althea config chain-id althea_417834-3
 ```
 
-## Download Genesis
-```
-wget -O $HOME/.althea/config/genesis.json "https://raw.githubusercontent.com/Alexmed911/Nodes-Setup-Manuals/main/Althea/genesis.json"
-sha256sum $HOME/.althea/config/genesis.json
-# af9260b536bc83875ae335d43a1b467967616a439ac736b3d18d6167a404f0b9
-```
 ## Create/recover wallet
 ```
-althea keys add wallet --algo secp256k1 --coin-type 118
-althea keys add wallet --algo secp256k1 --coin-type 118 --recover
+althea keys add wallet 
+althea keys add wallet  --recover
 ```
 
 ## Configure Peers/Gas-prices/Indexing
@@ -60,10 +53,6 @@ peers="733e9d5f995c2866df9f2e1254551940f060a70c@51.159.159.112:26656,11e8f38e3c5
 sed -i -e 's|^seeds *=.*|seeds = "'$seeds'"|; s|^persistent_peers *=.*|persistent_peers = "'$peers'"|' $HOME/.althea/config/config.toml
 indexer="null" && \
 sed -i -e "s/^indexer *=.*/indexer = \"$indexer\"/" $HOME/.althea/config/config.toml
-```
-## Download Addrbook
-```
-wget -O $HOME/.althea/config/addrbook.json "https://raw.githubusercontent.com/Alexmed911/Nodes-Setup-Manuals/main/Althea/addrbook.json"
 ```
 ## Pruning
 ```
@@ -124,7 +113,7 @@ althea tx staking create-validator \
 --amount=1000000ualthea \
 --pubkey=$(althea tendermint show-validator) \
 --moniker=Name \
---chain-id=althea_7357-1 \
+--chain-id=althea_417834-3 \
 --commission-rate="0.10" \
 --commission-max-rate="0.20" \
 --commission-max-change-rate="0.1" \
@@ -141,11 +130,11 @@ althea tx staking create-validator \
   ``` 
 ##  Delegate stake
 ```
-althea tx staking delegate $Valoper 1000000ualthea --from=wallet --fees=300ualthea --chain-id=althea_7357-1
+althea tx staking delegate $Valoper 1000000ualthea --from=wallet --fees=300ualthea --chain-id=althea_417834-3
 ```
 ##  Withdraw reward with commision
 ```
-althea tx distribution withdraw-rewards $Valoper --from=wallet --commission --fees=300ualthea --chain-id=althea_7357-1
+althea tx distribution withdraw-rewards $Valoper --from=wallet --commission --fees=300ualthea --chain-id=althea_417834-3
 ```
 ##  Balance
 ```
