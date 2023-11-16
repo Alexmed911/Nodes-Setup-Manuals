@@ -115,7 +115,7 @@ Konstellation<b>
     </td>
    <td align="center" width="200">
       <a href="https://github.com/Alexmed911/Nodes-Setup-Manuals/tree/main/Cosmos" >
-         <img src="https://pbs.twimg.com/profile_images/1572270323105660931/wfrYRGAC_400x400.jpg" width="400" height="150"  />
+         <img src="https://img.freepik.com/premium-vector/cosmos-atom-gold-coincrypto-currencydigital-money-exchange_268461-147.jpg" width="400" height="150"  />
       </a>
       <br><b>Cosmos<b>
     </td>
