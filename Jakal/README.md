@@ -15,7 +15,7 @@ sudo apt install curl tar unzip wget tmux clang lz4 pkg-config libssl-dev jq bui
 ```
 ## Install Go
 ```
-ver="1.19.3" && \
+ver="1.20.3" && \
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
 sudo rm -rf /usr/local/go && \
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
@@ -23,17 +23,17 @@ rm "go$ver.linux-amd64.tar.gz" && \
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
 source $HOME/.bash_profile && \
 go version    
-#1.19.3
+#1.20.3
 ```
-## Install Node
+## Install Node (upd 16.01.24)
 
 ```
 git clone https://github.com/JackalLabs/canine-chain 
 cd canine-chain
-git checkout v1.2.1
+git checkout v3.1.1
 make install
 canined version
-# v1.3.1
+# v3.1.1
 ```
 ## Initialize the node
 ```
