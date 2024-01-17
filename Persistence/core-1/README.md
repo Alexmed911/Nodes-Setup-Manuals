@@ -31,22 +31,22 @@ go version
 cd $HOME
 git clone https://github.com/persistenceOne/persistenceCore.git
 cd persistenceCore
-git checkout v7.0.0
+git checkout v10.3.0
 make install
 persistenceCore version         
-#v7.0.0
+#v13.3.0
 ```
-## 28.02.23 Update v7
+## 17.01.24 Update 
 ```
 cd $HOME/persistenceCore
 git pull
-git checkout v7.0.0
-make build
-cp build/persistenceCore /root/go/bin
+git checkout v10.3.0
+make install
+persistenceCore version
 ```
 ## Initialize the node
 ```
-persistenceCore config keyring-backend test
+persistenceCore config keyring-backend file
 persistenceCore init Name --chain-id core-1
 ```
 
