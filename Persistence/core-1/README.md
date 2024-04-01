@@ -15,7 +15,7 @@ sudo apt install curl tar unzip wget tmux clang lz4 pkg-config libssl-dev jq bui
 ```
 ## Install Go
 ```
-ver="1.19.3" && \
+ver="1.21.4" && \
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
 sudo rm -rf /usr/local/go && \
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
@@ -23,7 +23,7 @@ rm "go$ver.linux-amd64.tar.gz" && \
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
 source $HOME/.bash_profile && \
 go version    
-#1.19.3
+#1.21.4
 ```
 ## Install Node
 
@@ -31,16 +31,16 @@ go version
 cd $HOME
 git clone https://github.com/persistenceOne/persistenceCore.git
 cd persistenceCore
-git checkout v10.3.0
+git checkout v11.8.2
 make install
 persistenceCore version         
-#v13.3.0
+#v11.8.2
 ```
-## 17.01.24 Update 
+## 29.03.24 Update 
 ```
 cd $HOME/persistenceCore
 git pull
-git checkout v10.3.0
+git checkout v11.8.2
 make install
 persistenceCore version
 ```
